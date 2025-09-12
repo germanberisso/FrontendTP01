@@ -1,0 +1,126 @@
+/* ===== Estilos Globales ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 20px;
+}
+
+/* ===== Header ===== */
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Main ===== */
+main {
+  margin-top: 20px;
+}
+
+section {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+  margin-bottom: 15px;
+}
+
+/* Lista de integrantes */
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+ul li a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Botón de saludo */
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* ===== Media Queries ===== */
+
+/* Móviles pequeños: 400px */
+@media (max-width: 400px) {
+  body {
+    padding: 10px;
+  }
+
+  header, section {
+    padding: 15px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+/* Tablets: 900px */
+@media (max-width: 900px) {
+  main {
+    padding: 10px;
+  }
+}
+
+/* Escritorio grande: 1200px */
+@media (min-width: 1200px) {
+  body {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
