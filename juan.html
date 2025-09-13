@@ -8,19 +8,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Contenedor principal de la tarjeta de presentación -->
-  <div class="card">
+  <!-- Encabezado fijo con título y navegación -->
+  <header>
+    <h1>Tarjeta de Presentación</h1>
+    <nav>
+      <a href="index.html">Portada</a>
+      <a href="bitacora.html">Bitácora</a>
+    </nav>
+  </header>
+
+  <!-- Contenido principal de la tarjeta de presentación -->
+  <main>
     <!-- Imagen de perfil del usuario -->
     <img src="./img/juan.jpg" alt="Foto de perfil" class="profile-img">
     <!-- Nombre del usuario -->
-    <h1>Juan Dualibe</h1>
+    <h2>Juan Dualibe</h2>
     <!-- Ubicación actual del usuario -->
     <p class="location">Córdoba Capital, Argentina</p>
     <!-- Edad del usuario -->
     <p class="age">Edad: 33 años</p>
     <!-- Sección de habilidades -->
-    <div class="section">
-      <h2>Habilidades</h2>
+    <section class="skills-section">
+      <h3>Habilidades</h3>
       <!-- Lista de habilidades técnicas -->
       <ul>
         <li>JavaScript</li>
@@ -28,11 +37,11 @@
         <li>React Native</li>
         <li>PostgreSQL</li>
       </ul>
-    </div>
+    </section>
     <!-- Sección de películas favoritas -->
-    <div class="section">
-      <h2>Películas favoritas</h2>
-      <!-- Lista de imágenes de portadas de películas, cada una con un identificador para el modal -->
+    <section class="movies-section">
+      <h3>Películas favoritas</h3>
+      <!-- Lista de películas, cada una en un article -->
       <ul>
         <li>
           <img src="./img/El-Padrino.png" alt="El Padrino" class="cover-img" data-modal="movie1">
@@ -47,11 +56,11 @@
           <p class="movie-title">Inland Empire</p>
         </li>
       </ul>
-    </div>
+    </section>
     <!-- Sección de música favorita -->
-    <div class="section">
-      <h2>Música favorita</h2>
-      <!-- Lista de imágenes de portadas de discos, cada una con un identificador para el modal -->
+    <section class="music-section">
+      <h3>Música favorita</h3>
+      <!-- Lista de discos, cada uno en un article -->
       <ul>
         <li>
           <img src="https://via.placeholder.com/150x200?text=The+Bends" alt="The Bends" class="cover-img" data-modal="album1">
@@ -63,8 +72,13 @@
           <img src="https://via.placeholder.com/150x200?text=Play" alt="Play" class="cover-img" data-modal="album3">
         </li>
       </ul>
-    </div>
-  </div>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>© 2025 Juan Dualibe - Todos los derechos reservados</p>
+  </footer>
 
   <!-- Contenedor del modal para mostrar detalles de películas o discos -->
   <div class="modal" id="modal">
@@ -78,7 +92,7 @@
       <h3 id="modal-title"></h3>
       <!-- Descripción del elemento seleccionado -->
       <p id="modal-description"></p>
-      <!-- Contenedor para el subtítulo y tráiler (solo para movie3) -->
+      <!-- Contenedor para el subtítulo y tráiler -->
       <div id="modal-trailer"></div>
     </div>
   </div>
