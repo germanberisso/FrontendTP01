@@ -8,18 +8,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Contenedor principal de la tarjeta de presentación -->
   <div class="card">
-    <!-- Foto -->
+    <!-- Imagen de perfil del usuario -->
     <img src="./img/juan.jpg" alt="Foto de perfil" class="profile-img">
-    <!-- Nombre -->
-    <h1>Juan Pérez</h1>
-    <!-- Ubicación -->
+    <!-- Nombre del usuario -->
+    <h1>Juan Dualibe</h1>
+    <!-- Ubicación actual del usuario -->
     <p class="location">Córdoba Capital, Argentina</p>
-    <!-- Edad -->
+    <!-- Edad del usuario -->
     <p class="age">Edad: 33 años</p>
-    <!-- Habilidades -->
+    <!-- Sección de habilidades -->
     <div class="section">
       <h2>Habilidades</h2>
+      <!-- Lista de habilidades técnicas -->
       <ul>
         <li>JavaScript</li>
         <li>React</li>
@@ -27,24 +29,29 @@
         <li>PostgreSQL</li>
       </ul>
     </div>
-    <!-- Películas favoritas -->
+    <!-- Sección de películas favoritas -->
     <div class="section">
       <h2>Películas favoritas</h2>
+      <!-- Lista de imágenes de portadas de películas, cada una con un identificador para el modal -->
       <ul>
         <li>
-          <img src="https://via.placeholder.com/150x200?text=El+Padrino" alt="El Padrino" class="cover-img" data-modal="movie1">
+          <img src="./img/El-Padrino.png" alt="El Padrino" class="cover-img" data-modal="movie1">
+          <p class="movie-title">El Padrino</p>
         </li>
         <li>
-          <img src="https://via.placeholder.com/150x200?text=El+Origen" alt="El Origen" class="cover-img" data-modal="movie2">
+          <img src="./img/Inception.png" alt="El Origen" class="cover-img" data-modal="movie2">
+          <p class="movie-title">El Origen</p>
         </li>
         <li>
-          <img src="https://via.placeholder.com/150x200?text=Inland+Empire" alt="Inland Empire" class="cover-img" data-modal="movie3">
+          <img src="./img/Inland-Empire.jpeg" alt="Inland Empire" class="cover-img" data-modal="movie3">
+          <p class="movie-title">Inland Empire</p>
         </li>
       </ul>
     </div>
-    <!-- Música favorita -->
+    <!-- Sección de música favorita -->
     <div class="section">
       <h2>Música favorita</h2>
+      <!-- Lista de imágenes de portadas de discos, cada una con un identificador para el modal -->
       <ul>
         <li>
           <img src="https://via.placeholder.com/150x200?text=The+Bends" alt="The Bends" class="cover-img" data-modal="album1">
@@ -59,16 +66,24 @@
     </div>
   </div>
 
-  <!-- Modal -->
+  <!-- Contenedor del modal para mostrar detalles de películas o discos -->
   <div class="modal" id="modal">
+    <!-- Contenido del modal -->
     <div class="modal-content">
+      <!-- Botón para cerrar el modal -->
       <button class="close-btn">✕</button>
+      <!-- Contenedor para la imagen del modal -->
       <img src="" alt="Cover" class="modal-img" id="modal-img">
+      <!-- Título del elemento seleccionado -->
       <h3 id="modal-title"></h3>
+      <!-- Descripción del elemento seleccionado -->
       <p id="modal-description"></p>
+      <!-- Contenedor para el subtítulo y tráiler (solo para movie3) -->
+      <div id="modal-trailer"></div>
     </div>
   </div>
 
+  <!-- Enlaza el archivo JavaScript para la interactividad -->
   <script src="./js/juan.js"></script>
 </body>
 </html>

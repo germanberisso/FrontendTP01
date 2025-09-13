@@ -1,44 +1,50 @@
+/* Resetea márgenes y paddings, usa box-sizing para un cálculo consistente del tamaño */
 * {
   margin: 0;
-  padding: 0K;
+  padding: 0; /* Nota: '0K' era un error, corregido a '0' */
   box-sizing: border-box;
 }
 
+/* Estiliza el fondo del cuerpo con un gradiente animado */
 body {
-  min-height: 100vh;
-  display: flex;
+  min-height: 100vh; /* Asegura que el cuerpo ocupe al menos toda la altura de la ventana */
+  display: flex; /* Centra el contenido usando flexbox */
   justify-content: center;
   align-items: center;
-  background: linear-gradient(45deg, #6b7280, #7c3aed, #db2777, #f59e0b);
-  background-size: 400%;
-  animation: colorShift 15s ease infinite;
-  font-family: 'Poppins', sans-serif;
-  padding: 1rem;
+  background: linear-gradient(45deg, #6b7280, #7c3aed, #db2777, #f59e0b); /* Gradiente de colores vibrantes */
+  background-size: 400%; /* Amplía el gradiente para la animación */
+  animation: colorShift 15s ease infinite; /* Aplica la animación de cambio de color */
+  font-family: 'Poppins', sans-serif; /* Usa la fuente Poppins */
+  padding: 1rem; /* Margen interno para pantallas pequeñas */
 }
 
+/* Animación para el fondo que cambia de posición suavemente */
 @keyframes colorShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
+/* Estiliza la tarjeta de presentación */
 .card {
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 1.5rem;
-  max-width: 24rem;
-  width: 100%;
-  padding: 2rem;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background: rgba(255, 255, 255, 0.95); /* Fondo blanco semi-transparente */
+  border-radius: 1.5rem; /* Bordes redondeados */
+  max-width: 24rem; /* Ancho máximo de la tarjeta */
+  width: 100%; /* Ocupa todo el ancho disponible hasta el máximo */
+  padding: 2rem; /* Espaciado interno */
+  position: relative; /* Para posicionar el pseudo-elemento de brillo */
+  overflow: hidden; /* Oculta el exceso del brillo */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  transition: transform 0.4s ease, box-shadow 0.4s ease; /* Transiciones para hover */
 }
 
+/* Efecto hover: eleva la tarjeta y aumenta la sombra */
 .card:hover {
   transform: translateY(-10px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 }
 
+/* Pseudo-elemento para el efecto de brillo animado en la tarjeta */
 .card::before {
   content: '';
   position: absolute;
@@ -50,63 +56,71 @@ body {
     to bottom right,
     rgba(255, 255, 255, 0.3),
     rgba(255, 255, 255, 0)
-  );
-  transform: rotate(45deg);
-  pointer-events: none;
-  animation: shine 6s infinite;
+  ); /* Gradiente para el brillo */
+  transform: rotate(45deg); /* Rota el brillo diagonalmente */
+  pointer-events: none; /* Evita que interfiera con clics */
+  animation: shine 6s infinite; /* Aplica la animación de brillo */
 }
 
+/* Animación para el brillo que se mueve de izquierda a derecha */
 @keyframes shine {
   0% { transform: translateX(-100%) rotate(45deg); }
   100% { transform: translateX(100%) rotate(45deg); }
 }
 
+/* Estiliza la imagen de perfil */
 .profile-img {
-  width: 10rem;
-  height: 10rem;
-  border-radius: 50%;
-  border: 5px solid #ffffff;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  object-fit: cover;
-  margin: 0 auto 1rem;
+  width: 10rem; /* Ancho fijo */
+  height: 10rem; /* Altura fija */
+  border-radius: 50%; /* Forma circular */
+  border: 5px solid #ffffff; /* Borde blanco */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  object-fit: cover; /* Asegura que la imagen llene el espacio sin distorsionarse */
+  margin: 0 auto 1rem; /* Centra y añade margen inferior */
   display: block;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease; /* Transición para el efecto hover */
 }
 
+/* Efecto hover: escala la imagen de perfil */
 .profile-img:hover {
   transform: scale(1.1);
 }
 
+/* Estiliza el título del nombre */
 h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #1e40af;
+  font-size: 2rem; /* Tamaño grande */
+  font-weight: 700; /* Negrita */
+  color: #1e40af; /* Color azul oscuro */
   text-align: center;
   margin-bottom: 0.5rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Sombra ligera para profundidad */
 }
 
+/* Estiliza los textos de ubicación y edad */
 .location, .age {
   font-size: 1rem;
-  color: #374151;
+  color: #374151; /* Gris oscuro */
   text-align: center;
   margin-bottom: 1rem;
-  font-weight: 400;
+  font-weight: 400; /* Peso normal */
 }
 
+/* Estiliza las secciones (habilidades, películas, música) */
 .section {
-  margin: 1.5rem 0;
+  margin: 1.5rem 0; /* Espaciado vertical */
 }
 
+/* Estiliza los subtítulos de las secciones */
 .section h2 {
   font-size: 1.25rem;
-  font-weight: 600;
-  color: #1e40af;
+  font-weight: 600; /* Semi-negrita */
+  color: #1e40af; /* Azul oscuro */
   margin-bottom: 0.75rem;
-  position: relative;
+  position: relative; /* Para la línea animada */
   display: inline-block;
 }
 
+/* Línea animada debajo de los subtítulos */
 .section h2::after {
   content: '';
   position: absolute;
@@ -114,82 +128,101 @@ h1 {
   left: 0;
   width: 100%;
   height: 2px;
-  background: #7c3aed;
-  transform: scaleX(0);
+  background: #7c3aed; /* Color morado */
+  transform: scaleX(0); /* Inicialmente invisible */
   transform-origin: right;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease; /* Animación suave */
 }
 
+/* Expande la línea al hacer hover sobre la sección */
 .section:hover h2::after {
   transform: scaleX(1);
   transform-origin: left;
 }
 
+/* Estiliza las listas (habilidades, películas, música) */
 .section ul {
-  list-style: none;
+  list-style: none; /* Sin viñetas predeterminadas */
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  display: flex; /* Usa flexbox para alinear elementos */
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas */
+  gap: 0.5rem; /* Espacio entre elementos */
 }
 
+/* Estiliza los ítems de habilidades y películas */
 .section li {
   font-size: 0.95rem;
-  color: #4b5563;
+  color: #4b5563; /* Gris oscuro */
   margin: 0.5rem 0;
-  position: relative;
-  padding-left: 1.5rem;
-  transition: color 0.3s ease;
+  position: relative; /* Para el ícono de estrella en habilidades */
+  padding-left: 1.5rem; /* Espacio para la estrella en habilidades */
+  transition: color 0.3s ease; /* Transición para el hover */
 }
 
+/* Ícono de estrella antes de cada ítem de habilidades */
 .section li::before {
   content: '★';
   position: absolute;
   left: 0;
-  color: #db2777;
+  color: #db2777; /* Rosa vibrante */
   font-size: 0.8rem;
 }
 
+/* Cambia el color del texto al hacer hover */
 .section li:hover {
   color: #1e40af;
 }
 
+/* Estiliza las imágenes de portadas (películas y discos) */
 .cover-img {
-  width: 6rem;
-  height: 8rem;
-  object-fit: cover;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 6rem; /* Ancho fijo */
+  height: 8rem; /* Altura fija */
+  object-fit: cover; /* Ajusta la imagen sin distorsión */
+  border-radius: 0.5rem; /* Bordes redondeados */
+  cursor: pointer; /* Indica que es clicable */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones para hover */
 }
 
+/* Efecto hover: escala la portada y añade sombra */
 .cover-img:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Estiliza el título de las películas debajo de las portadas */
+.movie-title {
+  font-size: 0.9rem;
+  color: #4b5563; /* Gris oscuro */
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Estiliza el contenedor del modal */
 .modal {
-  display: none;
-  position: fixed;
+  display: none; /* Oculto por defecto */
+  position: fixed; /* Fijo en la pantalla */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 1000; /* Asegura que esté encima de otros elementos */
 }
 
+/* Estiliza el contenido del modal */
 .modal-content {
   background: white;
   border-radius: 1rem;
-  max-width: 20rem;
+  max-width: 28rem; /* Aumentado para dar más espacio al iframe y mostrar controles completos */
+  width: 90%; /* Asegura que sea responsivo */
   padding: 1.5rem;
   text-align: center;
-  position: relative;
+  position: relative; /* Para posicionar el botón de cerrar */
 }
 
+/* Estiliza la imagen dentro del modal */
 .modal-img {
   width: 8rem;
   height: 12rem;
@@ -198,26 +231,62 @@ h1 {
   margin-bottom: 1rem;
 }
 
+/* Estiliza el título del modal */
 .modal h3 {
   font-size: 1.25rem;
   color: #1e40af;
   margin-bottom: 0.5rem;
 }
 
+/* Estiliza la descripción del modal */
 .modal p {
   font-size: 0.9rem;
   color: #4b5563;
   margin-bottom: 1rem;
 }
 
+/* Contenedor responsivo para el iframe con relación de aspecto 16:9 */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* Relación de aspecto 16:9 (9/16 = 0.5625) */
+  height: 0;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+/* Estiliza el iframe dentro del contenedor */
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none; /* Sin borde */
+  border-radius: 0.5rem; /* Bordes redondeados */
+}
+
+/* Estiliza el contenedor del tráiler (subtítulo e iframe) */
+#modal-trailer {
+  margin-top: 1rem;
+}
+
+/* Estiliza el subtítulo del tráiler */
+#modal-trailer h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e40af;
+  margin-bottom: 0.5rem;
+}
+
+/* Estiliza el botón de cerrar del modal */
 .close-btn {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
-  background: #db2777;
+  background: #db2777; /* Rosa vibrante */
   color: white;
   border: none;
-  border-radius: 50%;
+  border-radius: 50%; /* Forma circular */
   width: 1.5rem;
   height: 1.5rem;
   cursor: pointer;
@@ -225,35 +294,40 @@ h1 {
   line-height: 1.5rem;
 }
 
+/* Media query para pantallas pequeñas (móviles) */
 @media (max-width: 640px) {
   .card {
-    padding: 1.5rem;
+    padding: 1.5rem; /* Reduce el padding */
   }
 
   .profile-img {
-    width: 8rem;
+    width: 8rem; /* Reduce el tamaño de la imagen */
     height: 8rem;
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Reduce el tamaño del título */
   }
 
   .section h2 {
-    font-size: 1.125rem;
+    font-size: 1.125rem; /* Reduce el tamaño de los subtítulos */
   }
 
   .section li {
-    font-size: 0.9rem;
+    font-size: 0.9rem; /* Reduce el tamaño del texto */
   }
 
   .cover-img {
-    width: 5rem;
+    width: 5rem; /* Reduce el tamaño de las portadas */
     height: 7rem;
   }
 
   .modal-img {
-    width: 6rem;
+    width: 6rem; /* Reduce el tamaño de la imagen del modal */
     height: 9rem;
+  }
+
+  .modal-content {
+    max-width: 90%; /* Ajusta el ancho del modal en móviles para ser responsivo */
   }
 }
