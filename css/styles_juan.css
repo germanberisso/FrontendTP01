@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 0K;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, #6b7280, #7c3aed, #db2777, #f59e0b);
+  background-size: 400%;
+  animation: colorShift 15s ease infinite;
+  font-family: 'Poppins', sans-serif;
+  padding: 1rem;
+}
+
+@keyframes colorShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 1.5rem;
+  max-width: 24rem;
+  width: 100%;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0)
+  );
+  transform: rotate(45deg);
+  pointer-events: none;
+  animation: shine 6s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+.profile-img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border: 5px solid #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+  margin: 0 auto 1rem;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.1);
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e40af;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.location, .age {
+  font-size: 1rem;
+  color: #374151;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.section {
+  margin: 1.5rem 0;
+}
+
+.section h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e40af;
+  margin-bottom: 0.75rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #7c3aed;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.section:hover h2::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.section ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.section li {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.section li::before {
+  content: '★';
+  position: absolute;
+  left: 0;
+  color: #db2777;
+  font-size: 0.8rem;
+}
+
+.section li:hover {
+  color: #1e40af;
+}
+
+.cover-img {
+  width: 6rem;
+  height: 8rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cover-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 1rem;
+  max-width: 20rem;
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.modal-img {
+  width: 8rem;
+  height: 12rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.modal h3 {
+  font-size: 1.25rem;
+  color: #1e40af;
+  margin-bottom: 0.5rem;
+}
+
+.modal p {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: #db2777;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 1.5rem;
+  }
+
+  .profile-img {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .section h2 {
+    font-size: 1.125rem;
+  }
+
+  .section li {
+    font-size: 0.9rem;
+  }
+
+  .cover-img {
+    width: 5rem;
+    height: 7rem;
+  }
+
+  .modal-img {
+    width: 6rem;
+    height: 9rem;
+  }
+}
