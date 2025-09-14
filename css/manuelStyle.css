@@ -1,0 +1,78 @@
+
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  
+}
+
+.redes-sociales {
+	display: inline-block;
+	position: absolute;
+	top: 85px;
+	right: 10px;	
+}
+.icono-redes {
+	width: 20px;
+	height: 20px;
+	margin: 5px;	
+}
+body {
+  background-image: url('../img/manuBackGround.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+title {
+  color: #ffffff;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: left;
+  padding: 10px;
+  position: static;
+  left:0;
+  bottom: 0;
+  width: 100%;
+}
+
+.copyright {
+  color: #fff;
+  text-align: center;
+}
+
+/* ===== Media Queries ===== */
+
+/* Móviles pequeños: 400px */
+@media (max-width: 400px) {
+  body {
+    padding: 10px;
+  }
+
+  header, section {
+    padding: 15px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+/* Tablets: 900px */
+@media (max-width: 900px) {
+  main {
+    padding: 10px;
+  }
+}
+
+/* Escritorio grande: 1200px */
+@media (min-width: 1200px) {
+  body {
+    max-width: 1920px;
+    margin: 0 auto;
+  }}
