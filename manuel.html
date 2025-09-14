@@ -7,51 +7,67 @@
   <!-- Estilos -->
   <link rel="stylesheet" href="css/manuelStyle.css">
   <!-- JS -->
-  <script defer src="js/script.js"></script>
+  <script defer src="js/manuel.js"></script>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="manuelBody">
+<body class="body">
     <header>
-        <h1 class="title">Gasbarro</h1>
-        <h1 class="title">Juan Manuel</h1>
+        <img src="../img/manuel/nombre.png" alt="Gasbarro Juan Manuel" class="nombre">
 
-        <div class="redes-sociales">
-			<a href="https://facebook.com" target="_blank"><img src="../img/icon-facebook.png" alt="Icono Facebook" class="icono-redes"> </a>
-			<a href="https://www.instagram.com/jmgasbarro/" target="_blank"><img src="../img/icon-instagram.png" alt="Icono Instagram" class="icono-redes"> </a>
-			<a href="https://www.linkedin.com/in/jmgasbarro/" target="_blank"><img src="../img/icon-linkedin.png" alt="Icono Linkedin" class="icono-redes"> </a>
+        <div class="redesSociales">
+			<a href="https://facebook.com" target="_blank"><img src="../img/manuel/icon-facebook.png" alt="Icono Facebook" class="iconoRedes"> </a>
+			<a href="https://www.instagram.com/jmgasbarro/" target="_blank"><img src="../img/manuel/icon-instagram.png" alt="Icono Instagram" class="iconoRedes"> </a>
+			<a href="https://www.linkedin.com/in/jmgasbarro/" target="_blank"><img src="../img/manuel/icon-linkedin.png" alt="Icono Linkedin" class="iconoRedes"> </a>
 		</div>
         
     </header>
 
-    <main>
+    <main class="contenido">
         <section>
             <h2>Bienvenido a mi página personal</h2>
             <p>Hola, soy Juan Manuel Gasbarro, un desarrollador front-end apasionado por crear experiencias web increíbles.</p>
         </section>
 
         <section>
-            <h2>Mis Habilidades</h2>
-            <ul>
-                <li>HTML5 & CSS3</li>
-                <li>JavaScript (ES6+)</li>
-                <li>Frameworks: React, Vue.js</li>
-                <li>Control de versiones: Git & GitHub</li>
-            </ul>
+            <!-- Imagen que inicia la selección de habilidades -->
+            <img src="../img/manuel/misHabilidades.png"alt="Elige tu habilidad" id="btn-habilidades" style="cursor:pointer; width:200px;">
+            <!-- Contenedor que aparece al hacer clic en la imagen -->
+            <div id="seleccion-habilidades" style="display:none; text-align:center;">
+                <button id="cerrar-habilidades" style="position:absolute; top:10px; right:10px; height: 20px; width:20px; padding:0; border:none; background:transparent; cursor:pointer;">
+                     <img src="img/manuel/cerrar.png" alt="Cerrar" style="height:100%; width:100%;">
+                </button>
+                <!-- <img src="img/manuel/bolsaPokemon.png" alt="Fondo habilidades" style="width:450px; display:block; margin:0 auto 20px;">-->
+                <div class="pokebolas">
+                    <img src="img/manuel/pokebola.png" alt="HTML5" class="poke-habilidad" data-hab="html">
+                    <img src="img/manuel/pokebola.png" alt="CSS3" class="poke-habilidad" data-hab="css">
+                    <img src="img/manuel/pokebola.png" alt="JavaScript" class="poke-habilidad" data-hab="js">
+                    <img src="img/manuel/pokebola.png" alt="GitHub" class="poke-habilidad" data-hab="git">
+                </div>
+                <div id="desc-habilidad" class="explicacion" style="margin-top:20px; min-height:40px;"></div>
+            </div>
         </section>
     </main>
+    <footer>
+        <h2>Contacto</h2>
+
+        <p>Teléfono: +54 9 11 1234-5678</p>
+        <p>Email: juanmanuelgasbarro@gmail.com</p>
+        <p>Linkedin: <a href="https://www.linkedin.com/in/jmgasbarro/" target="_blank">www.linkedin.com/in/jmgasbarro</a></p>
+        <p>GitHub: <a href="https://github.com/jmgasbarro" target="_blank">jmgasbarro</a></p>
+   
+        <p class="copyright">© 2025 - Equipo Frontend</p>
+    </footer>
 </body>
 
-<footer>
-   
-<h2>Contacto</h2>
+<!--Configuracion js-->
+<script>
+    function mostrarExplicacion(indice) {
+        const explicaciones = document.querySelectorAll('#habilidades .explicacion');
+        explicaciones.forEach((exp, i) => {
+            exp.style.display = (i === indice && exp.style.display === "none") ? "block" : "none";
+        });
+    }
+</script>
 
-    <p>Teléfono: +54 9 11 1234-5678</p>
-    <p>Email: juanmanuelgasbarro@gmail.com</p>
-    <p>Linkedin: <a href="https://www.linkedin.com/in/jmgasbarro/" target="_blank">www.linkedin.com/in/jmgasbarro</a></p>
-    <p>GitHub: <a href="https://github.com/jmgasbarro" target="_blank">jmgasbarro</a></p>
-
-   
-    <p class="copyright">© 2025 - Equipo Frontend</p>
-</footer>
 </html>
