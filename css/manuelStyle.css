@@ -88,15 +88,18 @@ title {
   text-align: left;
   margin-bottom: 20px;
 }
-ul.desplegable {
-    margin-left: 20px;
-    margin-bottom: 15px;
-    cursor: pointer;
+section {
+  background-color: white;
+  padding: 0px 0px 10px 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-
-ul.desplegable li {
-  margin-bottom: 10px;
-  padding: 5px 0;
+h3 {
+  color: #000000;
+  text-align: left;
+  font-family: press-start-2p, cursive;
+  margin-top: 20px;
 }
 
 .explicacion {
@@ -168,11 +171,24 @@ footer a:hover {
     margin: 0 auto;
   }}
 
+ .container-centrado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.btnHabilidades {
+    width: 400px;
+    cursor: pointer;
+    
+}
   
  .pokebolas {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 40px;
   margin-top: 10px;
 }
 
