@@ -59,7 +59,16 @@ main {
   overflow: hidden;
   animation: heartbeat 1.5s infinite;
 }
-
+.volver {
+  width: 100px;
+  height: 40px;
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  animation: bounce 1.2s infinite alternate;
+}
 @keyframes heartbeat {
   0%, 100% {
     transform: scale(1);
@@ -90,10 +99,11 @@ title {
 }
 section {
   background-color: white;
+  background: rgba(255,255,255,0.25);
   padding: 0px 0px 10px 20px;
   margin-bottom: 15px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  /*box-shadow: 0 2px 5px rgba(0,0,0,0.1);*/
 }
 h3 {
   color: #000000;
@@ -182,6 +192,7 @@ footer a:hover {
 .btnHabilidades {
     width: 400px;
     cursor: pointer;
+    animation: heartbeat 1.5s infinite;
     
 }
   
