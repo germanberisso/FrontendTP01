@@ -1,50 +1,141 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portada - Equipo Frontend</title>
-  <!-- Estilos -->
-  <link rel="stylesheet" href="css/style.css">
-  <!-- JS -->
-  <script defer src="js/script.js"></script>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header>
-    <h1>Equipo Frontend</h1>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="bitacora.html">Bitácora</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grupo 3 - Desarrollo Web</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="header__nav">
+        <a href="index.html" class="header__link">
+          <div class="header__logo">
+            <h1 class="header__title">Grupo 3</h1>
+          </div>
+        </a>
+        <ul class="header__menu">
+          <li class="header__menu-item">
+            <a href="index.html" class="header__link header__link--active"
+              >Inicio</a
+            >
+          </li>
+          <li class="header__menu-item">
+            <a href="bitacora.html" class="header__link">Bitácora</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-  <main>
-    <section>
-      <h2>Quiénes somos</h2>
-      <p>Somos un equipo de estudiantes trabajando en el desarrollo de un sitio web para la materia Frontend. Nuestro objetivo es crear un sitio organizado, responsive y con interactividad usando HTML, CSS y JavaScript.</p>
-    </section>
+    <main class="main">
+      <section class="hero">
+        <div class="hero__container">
+          <h2 class="hero__title">
+            Bienvenidos al <span class="hero__name">Grupo 3</span>
+          </h2>
+          <p class="hero__subtitle">
+            Somos un equipo apasionado por el desarrollo web y la innovación
+            tecnológica
+          </p>
+          <button class="hero__button" id="welcomeBtn">
+            ¡Conoce más sobre nosotros!
+          </button>
+          <div class="hero__message" id="welcomeMessage" style="display: none">
+            <p>
+              🚀 ¡Gracias por tu interés! Explora nuestros perfiles individuales
+              para conocer más sobre cada miembro del equipo.
+            </p>
+          </div>
+        </div>
+      </section>
 
-    <section>
-      <h2>Integrantes</h2>
-      <ul>
-        <li><a href="german.html">German</a></li>
-        <li><a href="juan.html">Juan</a></li>
-        <li><a href="manuel.html">Manuel</a></li>
-        <li><a href="nicolas.html">Nicolas</a></li>
-      </ul>
-    </section>
+      <section class="team">
+        <div class="team__container">
+          <h3 class="team__title">Nuestro Equipo</h3>
+          <p class="team__description">
+            Somos un equipo de estudiantes trabajando en el desarrollo de un
+            sitio web para la materia Frontend. Nuestro objetivo es crear un
+            sitio organizado, responsive y con interactividad usando HTML, CSS y
+            JavaScript.
+          </p>
 
-    <section>
-      <h2>Interacción con JavaScript</h2>
-      <button id="btnSaludo">Haz clic para un saludo</button>
-      <p id="mensaje"></p>
-    </section>
-  </main>
+          <div class="team__grid">
+            <div class="member-card">
+              <div class="member-card__image">
+                <img
+                  src="/placeholder.svg?height=200&width=200"
+                  alt="Avatar de Germán"
+                  class="member-card__img"
+                />
+              </div>
+              <div class="member-card__info">
+                <h4 class="member-card__name">Germán</h4>
+                <p class="member-card__role">Frontend Developer</p>
+              </div>
+              <a href="german.html" class="member-card__link">Ver perfil</a>
+            </div>
 
-  <footer>
-    <p>© 2025 - Equipo Frontend</p>
-  </footer>
-</body>
+            <div class="member-card">
+              <div class="member-card__image">
+                <img
+                  src="/placeholder.svg?height=200&width=200"
+                  alt="Avatar de Juan"
+                  class="member-card__img"
+                />
+              </div>
+              <div class="member-card__info">
+                <h4 class="member-card__name">Juan</h4>
+                <p class="member-card__role">UI/UX Designer</p>
+              </div>
+              <a href="juan.html" class="member-card__link">Ver perfil</a>
+            </div>
+
+            <div class="member-card">
+              <div class="member-card__image">
+                <img
+                  src="/placeholder.svg?height=200&width=200"
+                  alt="Avatar de Manuel"
+                  class="member-card__img"
+                />
+              </div>
+              <div class="member-card__info">
+                <h4 class="member-card__name">Manuel</h4>
+                <p class="member-card__role">Backend Developer</p>
+              </div>
+              <a href="manuel.html" class="member-card__link">Ver perfil</a>
+            </div>
+
+            <div class="member-card">
+              <div class="member-card__image">
+                <img
+                  src="/placeholder.svg?height=200&width=200"
+                  alt="Avatar de Nicolás"
+                  class="member-card__img"
+                />
+              </div>
+              <div class="member-card__info">
+                <h4 class="member-card__name">Nicolás</h4>
+                <p class="member-card__role">Project Manager</p>
+              </div>
+              <a href="nicolas.html" class="member-card__link">Ver perfil</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__container">
+        <p class="footer__text">
+          &copy; 2024 Grupo 3. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>
