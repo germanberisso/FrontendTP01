@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjeta de Presentación</title>
+  <link rel="stylesheet" href="./css/styles_juan.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Encabezado fijo con título y navegación -->
+  <header>
+    <h1>Tarjeta de Presentación</h1>
+    <nav>
+      <a href="index.html">Portada</a>
+      <a href="bitacora.html">Bitácora</a>
+    </nav>
+  </header>
+
+  <!-- Contenido principal de la tarjeta de presentación -->
+  <main>
+    <!-- Imagen de perfil del usuario -->
+    <img src="./img/juan.jpg" alt="Foto de perfil" class="profile-img">
+    <!-- Nombre del usuario -->
+    <h2>Juan Dualibe</h2>
+    <!-- Ubicación actual del usuario -->
+    <p class="location">Córdoba Capital, Argentina</p>
+    <!-- Edad del usuario -->
+    <p class="age">Edad: 33 años</p>
+    <!-- Sección de habilidades -->
+    <section class="skills-section">
+      <h3>Habilidades</h3>
+      <!-- Lista de habilidades técnicas -->
+      <ul>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>React Native</li>
+        <li>PostgreSQL</li>
+      </ul>
+    </section>
+    <!-- Sección de películas favoritas -->
+    <section class="movies-section">
+      <h3>Películas favoritas</h3>
+      <!-- Lista de películas, cada una en un article -->
+      <ul>
+        <li>
+          <img src="./img/El-Padrino.png" alt="El Padrino" class="cover-img" data-modal="movie1">
+          <p class="movie-title">El Padrino</p>
+        </li>
+        <li>
+          <img src="./img/Inception.png" alt="El Origen" class="cover-img" data-modal="movie2">
+          <p class="movie-title">El Origen</p>
+        </li>
+        <li>
+          <img src="./img/Inland-Empire.jpeg" alt="Inland Empire" class="cover-img" data-modal="movie3">
+          <p class="movie-title">Inland Empire</p>
+        </li>
+      </ul>
+    </section>
+    <!-- Sección de música favorita -->
+    <section class="music-section">
+      <h3>Música favorita</h3>
+      <!-- Lista de discos, cada uno en un article -->
+      <ul>
+        <li>
+          <img src="https://via.placeholder.com/150x200?text=The+Bends" alt="The Bends" class="cover-img" data-modal="album1">
+        </li>
+        <li>
+          <img src="https://via.placeholder.com/150x200?text=Take+It+from+the+Man!" alt="Take It from the Man!" class="cover-img" data-modal="album2">
+        </li>
+        <li>
+          <img src="https://via.placeholder.com/150x200?text=Play" alt="Play" class="cover-img" data-modal="album3">
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>© 2025 Juan Dualibe - Todos los derechos reservados</p>
+  </footer>
+
+  <!-- Contenedor del modal para mostrar detalles de películas o discos -->
+  <div class="modal" id="modal">
+    <!-- Contenido del modal -->
+    <div class="modal-content">
+      <!-- Botón para cerrar el modal -->
+      <button class="close-btn">✕</button>
+      <!-- Contenedor para la imagen del modal -->
+      <img src="" alt="Cover" class="modal-img" id="modal-img">
+      <!-- Título del elemento seleccionado -->
+      <h3 id="modal-title"></h3>
+      <!-- Descripción del elemento seleccionado -->
+      <p id="modal-description"></p>
+      <!-- Contenedor para el subtítulo y tráiler -->
+      <div id="modal-trailer"></div>
+    </div>
+  </div>
+
+  <!-- Enlaza el archivo JavaScript para la interactividad -->
+  <script src="./js/juan.js"></script>
+</body>
+</html>
