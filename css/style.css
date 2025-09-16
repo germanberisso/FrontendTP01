@@ -579,10 +579,4 @@ body {
   background-color: #fed7aa !important;
 }
 
-/* ESTILOS MANUEL */
-.manuelBody {
-  background-image: url("../ruta/de/tu/imagen.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+
