@@ -1,0 +1,430 @@
+/* Resetea márgenes y paddings, usa box-sizing para un cálculo consistente del tamaño */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estiliza el fondo del cuerpo con un gradiente animado */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Asegura que el cuerpo ocupe al menos toda la altura de la ventana */
+  display: flex;
+  flex-direction: column; /* Permite que el header, main y footer se apilen verticalmente */
+  background: linear-gradient(45deg, #6b7280, #7c3aed, #db2777, #f59e0b); /* Gradiente de colores vibrantes */
+  background-size: 400%; /* Amplía el gradiente para la animación */
+  animation: colorShift 15s ease infinite; /* Aplica la animación de cambio de color */
+  font-family: 'Poppins', sans-serif; /* Usa la fuente Poppins */
+  
+}
+
+/* Animación para el fondo que cambia de posición suavemente */
+@keyframes colorShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Estiliza el encabezado fijo */
+header {
+  position: fixed; /* Fijo en la parte superior */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95); /* Fondo blanco semi-transparente, igual que la tarjeta */
+  border-bottom: 2px solid #7c3aed; /* Borde morado para consistencia */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between; /* Título a la izquierda, navegación a la derecha */
+  align-items: center;
+  z-index: 1100; /* Encima del modal (z-index: 1000) */
+}
+
+/* Estiliza el título del encabezado */
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e40af; /* Azul oscuro, igual que otros títulos */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Estiliza el contenedor de navegación */
+header nav {
+  display: flex;
+  gap: 1rem; /* Espacio entre enlaces */
+}
+
+/* Estiliza los enlaces de navegación */
+header nav a {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e40af; /* Azul oscuro, consistente con el diseño */
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Efecto hover en los enlaces de navegación */
+header nav a:hover {
+  background-color: #db2777; /* Rosa vibrante para el hover */
+  color: white;
+}
+
+/* Estiliza el contenido principal (antes .card) */
+main {
+  background: rgba(255, 255, 255, 0.95); /* Fondo blanco semi-transparente */
+  border-radius: 1.5rem; /* Bordes redondeados */
+  max-width: 40rem; /* Ancho máximo, igual que antes */
+  width: 100%; /* Ocupa todo el ancho disponible hasta el máximo */
+  padding: 2rem; /* Espaciado interno */
+  position: relative; /* Para posicionar el pseudo-elemento de brillo */
+  overflow: hidden; /* Oculta el exceso del brillo */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  transition: transform 0.4s ease, box-shadow 0.4s ease; /* Transiciones para hover */
+  margin: 10rem auto 5rem; /* Centra horizontalmente con margen vertical */
+  flex: 1 0 auto; /* Permite que el main ocupe el espacio disponible */
+}
+
+/* Efecto hover: eleva la tarjeta y aumenta la sombra */
+main:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Pseudo-elemento para el efecto de brillo animado en la tarjeta */
+main::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0)
+  ); /* Gradiente para el brillo */
+  transform: rotate(45deg); /* Rota el brillo diagonalmente */
+  pointer-events: none; /* Evita que interfiera con clics */
+  animation: shine 6s infinite; /* Aplica la animación de brillo */
+}
+
+/* Animación para el brillo que se mueve de izquierda a derecha */
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+/* Estiliza la imagen de perfil */
+.profile-img {
+  width: 10rem; /* Ancho fijo */
+  height: 10rem; /* Altura fija */
+  border-radius: 50%; /* Forma circular */
+  border: 5px solid #ffffff; /* Borde blanco */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  object-fit: cover; /* Asegura que la imagen llene el espacio sin distorsionarse */
+  margin: 0 auto 1rem; /* Centra y añade margen inferior */
+  display: block;
+  transition: transform 0.3s ease; /* Transición para el efecto hover */
+}
+
+/* Efecto hover: escala la imagen de perfil */
+.profile-img:hover {
+  transform: scale(1.1);
+}
+
+/* Estiliza el título del nombre */
+main h2 {
+  font-size: 2rem; /* Tamaño grande */
+  font-weight: 700; /* Negrita */
+  color: #1e40af; /* Color azul oscuro */
+  text-align: center;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Sombra ligera para profundidad */
+}
+
+/* Estiliza los textos de ubicación y edad */
+.location, .age {
+  font-size: 1rem;
+  color: #374151; /* Gris oscuro */
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 400; /* Peso normal */
+}
+
+/* Estiliza las secciones (habilidades, películas, música) */
+section {
+  margin: 1.5rem 0; /* Espaciado vertical */
+}
+
+/* Estiliza los subtítulos de las secciones */
+section h2 {
+  font-size: 1.25rem;
+  font-weight: 600; /* Semi-negrita */
+  color: #1e40af; /* Azul oscuro */
+  margin-bottom: 0.75rem;
+  position: relative; /* Para la línea animada */
+  display: inline-block;
+}
+
+/* Línea animada debajo de los subtítulos */
+section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #7c3aed; /* Color morado */
+  transform: scaleX(0); /* Inicialmente invisible */
+  transform-origin: right;
+  transition: transform 0.3s ease; /* Animación suave */
+}
+
+/* Expande la línea al hacer hover sobre la sección */
+section:hover h2::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Estiliza las listas (habilidades, películas, música) */
+section ul {
+  list-style: none; /* Sin viñetas predeterminadas */
+  padding: 0;
+  display: flex; /* Usa flexbox para alinear elementos */
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas */
+  gap: 5.5rem; /* Espacio entre elementos */
+}
+
+/* Estiliza los ítems de habilidades y artículos de películas/discos */
+section li, article {
+  font-size: 0.95rem;
+  color: #4b5563; /* Gris oscuro */
+  margin: 0.5rem 0;
+  position: relative; /* Para el ícono de estrella en habilidades */
+  padding-left: 1.5rem; /* Espacio para la estrella en habilidades */
+  transition: color 0.3s ease; /* Transición para el hover */
+}
+
+/* Ícono de estrella antes de cada ítem de habilidades */
+section li::before {
+  content: '★';
+  position: absolute;
+  left: 0;
+  color: #db2777; /* Rosa vibrante */
+  font-size: 0.8rem;
+}
+
+/* Cambia el color del texto al hacer hover */
+section li:hover, article:hover {
+  color: #1e40af;
+}
+
+/* Estiliza las imágenes de portadas (películas y discos) */
+.cover-img {
+  width: 6rem; /* Ancho fijo */
+  height: 8rem; /* Altura fija */
+  object-fit: cover; /* Ajusta la imagen sin distorsión */
+  border-radius: 0.5rem; /* Bordes redondeados */
+  cursor: pointer; /* Indica que es clicable */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones para hover */
+}
+
+/* Efecto hover: escala la portada y añade sombra */
+.cover-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Estiliza el título de las películas debajo de las portadas */
+.movie-title {
+  font-size: 0.9rem;
+  color: #4b5563; /* Gris oscuro */
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Estiliza el pie de página */
+footer {
+  width: 100%; /* Ocupa todo el ancho de la página */  
+  margin-top: auto; /* Empuja el footer al final del contenedor flex */
+  background: rgba(255, 255, 255, 0.95); /* Fondo blanco semi-transparente */
+  border-top: 2px solid #7c3aed; /* Borde morado para consistencia */
+  padding: 1rem 2rem; /* Padding interno, más espacio lateral para consistencia con el header */
+  text-align: center;
+  color: #1e40af; /* Azul oscuro */
+  font-size: 0.9rem;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estiliza el texto del pie de página */
+footer p {
+  margin: 0;
+}
+
+/* Estiliza el contenedor del modal */
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed; /* Fijo en la pantalla */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Debajo del header (z-index: 1100) */
+}
+
+/* Estiliza el contenido del modal */
+.modal-content {
+  background: white;
+  border-radius: 1rem;
+  max-width: 28rem; /* Aumentado para dar más espacio al iframe y mostrar controles completos */
+  width: 90%; /* Asegura que sea responsivo */
+  padding: 1.5rem;
+  text-align: center;
+  position: relative; /* Para posicionar el botón de cerrar */
+}
+
+/* Estiliza la imagen dentro del modal */
+.modal-img {
+  width: 8rem;
+  height: 12rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Estiliza el título del modal */
+.modal h3 {
+  font-size: 1.25rem;
+  color: #1e40af;
+  margin-bottom: 0.5rem;
+}
+
+/* Estiliza la descripción del modal */
+.modal p {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+/* Contenedor responsivo para el iframe con relación de aspecto 16:9 */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* Relación de aspecto 16:9 (9/16 = 0.5625) */
+  height: 0;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+/* Estiliza el iframe dentro del contenedor */
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none; /* Sin borde */
+  border-radius: 0.5rem; /* Bordes redondeados */
+}
+
+/* Estiliza el contenedor del tráiler (subtítulo e iframe) */
+#modal-trailer {
+  margin-top: 1rem;
+}
+
+/* Estiliza el subtítulo del tráiler */
+#modal-trailer h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e40af;
+  margin-bottom: 0.5rem;
+}
+
+/* Estiliza el botón de cerrar del modal */
+.close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: #db2777; /* Rosa vibrante */
+  color: white;
+  border: none;
+  border-radius: 50%; /* Forma circular */
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+/* Media query para pantallas pequeñas (móviles) */
+@media (max-width: 640px) {
+  body {
+    padding: 0;
+    margin-top: 0rem;
+  }
+
+  header {
+    padding: 0.5rem 1rem; /* Reduce el padding */
+    flex-direction: column; /* Apila título y navegación */
+    align-items: flex-start;
+  }
+
+  header h1 {
+    font-size: 1.25rem; /* Reduce el tamaño del título */
+  }
+
+  header nav {
+    gap: 0.5rem; /* Reduce el espacio entre enlaces */
+  }
+
+  header nav a {
+    font-size: 0.9rem; /* Reduce el tamaño del texto */
+    padding: 0.3rem 0.8rem;
+  }
+
+  main {
+    padding: 1.5rem; /* Reduce el padding */
+    margin: 1rem auto; /* Menos margen vertical en móviles */
+  }
+
+  .profile-img {
+    width: 8rem; /* Reduce el tamaño de la imagen */
+    height: 8rem;
+  }
+
+  main h1 {
+    font-size: 1.5rem; /* Reduce el tamaño del título */
+  }
+
+  section h2 {
+    font-size: 1.125rem; /* Reduce el tamaño de los subtítulos */
+  }
+
+  section li, article {
+    font-size: 0.9rem; /* Reduce el tamaño del texto */
+  }
+
+  .cover-img {
+    width: 5rem; /* Reduce el tamaño de las portadas */
+    height: 7rem;
+  }
+
+  .modal-img {
+    width: 6rem; /* Reduce el tamaño de la imagen del modal */
+    height: 9rem;
+  }
+
+  .modal-content {
+    max-width: 90%; /* Ajusta el ancho del modal en móviles para ser responsivo */
+  }
+
+  footer {
+    font-size: 0.8rem; /* Reduce el tamaño del texto */    
+  }
+}
