@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nicolás - Grupo 3</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="header__nav">
+        <a href="index.html" class="header__link">
+          <div class="header__logo">
+            <h1 class="header__title">Grupo 3</h1>
+          </div>
+        </a>
+        <ul class="header__menu">
+          <li class="header__menu-item">
+            <a href="index.html" class="header__link">Inicio</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="bitacora.html" class="header__link">Bitácora</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="profile">
+        <div class="profile__container">
+          <button
+            class="profile__back"
+            onclick="window.location.href='index.html'"
+          >
+            ← Volver al equipo
+          </button>
+
+          <div class="profile__card">
+            <div class="profile__header">
+              <img
+                src="/placeholder.svg?height=250&width=250"
+                alt="Nicolás"
+                class="profile__image"
+              />
+              <div class="profile__info">
+                <h2 class="profile__name">Nicolás</h2>
+                <p class="profile__role">Project Manager</p>
+                <p class="profile__location">📍 Mendoza, Argentina</p>
+                <p class="profile__age">🎂 22 años</p>
+              </div>
+            </div>
+
+            <div class="profile__section">
+              <h3 class="profile__section-title">Habilidades</h3>
+              <div class="skills">
+                <span class="skills__item">Python</span>
+                <span class="skills__item">Django</span>
+                <span class="skills__item">MySQL</span>
+                <span class="skills__item">HTML</span>
+                <span class="skills__item">CSS</span>
+                <span class="skills__item">JavaScript</span>
+                <span class="skills__item">React</span>
+                <span class="skills__item">Análisis de datos</span>
+              </div>
+            </div>
+
+            <div class="profile__section">
+              <h3 class="profile__section-title">
+                Películas y Series Favoritas
+              </h3>
+              <div class="favorites">
+                <div class="favorites__item">🎥 Breaking Bad</div>
+                <div class="favorites__item">🎬 Django sin cadenas</div>
+                <div class="favorites__item">🎥 Lost</div>
+                <div class="favorites__item">🎬 Interestelar</div>
+              </div>
+            </div>
+
+            <div class="profile__section">
+              <h3 class="profile__section-title">Música Favorita</h3>
+              <div class="favorites">
+                <div class="favorites__item">🎵 Duki</div>
+                <div class="favorites__item">🎵 Ysy A</div>
+                <div class="favorites__item">🎵 Nicky Nicole</div>
+                <div class="favorites__item">🎵 Bad Bunny</div>
+              </div>
+              <button class="profile__info-btn" onclick="showAlert()">
+                Mostrar información extra
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__container">
+        <p class="footer__text">
+          &copy; 2024 Grupo 3. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/profile.js"></script>
+  </body>
+</html>
