@@ -1,110 +1,81 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Manuel - Grupo 3</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header class="header">
-      <nav class="header__nav">
-        <a href="index.html" class="header__link">
-          <div class="header__logo">
-            <h1 class="header__title">Grupo 3</h1>
-          </div>
-        </a>
-        <ul class="header__menu">
-          <li class="header__menu-item">
-            <a href="index.html" class="header__link">Inicio</a>
-          </li>
-          <li class="header__menu-item">
-            <a href="bitacora.html" class="header__link">Bitácora</a>
-          </li>
-        </ul>
-      </nav>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gasbarro Juan Manuel</title>
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/manuelStyle.css">
+  <!-- JS -->
+  <script defer src="js/manuel.js"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body class="body">
+    <header>
+        <img src="../img/manuel/nombre.png" alt="Gasbarro Juan Manuel" class="nombre">
+
+        <div class="redesSociales">
+			<a href="https://facebook.com" target="_blank"><img src="../img/manuel/icon-facebook.png" alt="Icono Facebook" class="iconoRedes"> </a>
+			<a href="https://www.instagram.com/jmgasbarro/" target="_blank"><img src="../img/manuel/icon-instagram.png" alt="Icono Instagram" class="iconoRedes"> </a>
+			<a href="https://www.linkedin.com/in/jmgasbarro/" target="_blank"><img src="../img/manuel/icon-linkedin.png" alt="Icono Linkedin" class="iconoRedes"> </a>
+		</div>
+        
+        <img src="../img/manuel/volver.png" alt="volver" class="volver" onclick="window.location.href='../index.html'">
     </header>
 
-    <main class="main">
-      <section class="profile">
-        <div class="profile__container">
-          <button
-            class="profile__back"
-            onclick="window.location.href='index.html'"
-          >
-            ← Volver al equipo
-          </button>
-
-          <div class="profile__card">
-            <div class="profile__header">
-              <img
-                src="/placeholder.svg?height=250&width=250"
-                alt="Manuel"
-                class="profile__image"
-              />
-              <div class="profile__info">
-                <h2 class="profile__name">Manuel</h2>
-                <p class="profile__role">Backend Developer</p>
-                <p class="profile__location">📍 Buenos Aires, Argentina</p>
-                <p class="profile__age">🎂 X años</p>
-              </div>
+    <main class="contenido">
+        
+            <div class="container-centrado">
+                <img src="../img/manuel/bienvenida.png" alt="cartelBienvenida" class="fotoPerfil">
             </div>
+        <section>
+            <h3>Hola, soy Juan Manuel Gasbarro, docente de Educación Física, entrenador de voley y estudiante de la Tecnicatura Superior en Desarrollo de software.</h3>
+            <h3>En esta página encontrarás información sobre mis habilidades, proyectos y formas de contactarme. ¡Gracias por visitarla!</h3>
+            
+        </section>
 
-            <div class="profile__section">
-              <h3 class="profile__section-title">Habilidades</h3>
-              <div class="skills">
-                <span class="skills__item">Node.js</span>
-                <span class="skills__item">Python</span>
-                <span class="skills__item">MongoDB</span>
-                <span class="skills__item">PostgreSQL</span>
-                <span class="skills__item">Docker</span>
-                <span class="skills__item">AWS</span>
-              </div>
-              <button class="profile__animate-btn" onclick="animateSkills()">
-                Animar habilidades
-              </button>
+        
+            <!-- Imagen que inicia la selección de habilidades -->
+            <div class="container-centrado">
+                <img src="../img/manuel/misHabilidades.png" alt="Mis Habilidades" class="btnHabilidades" id="btn-habilidades">
             </div>
-
-            <div class="profile__section">
-              <h3 class="profile__section-title">Películas Favoritas</h3>
-              <div class="favorites">
-                <div class="favorites__item">🎬 The Social Network</div>
-                <div class="favorites__item">🎬 Ex Machina</div>
-                <div class="favorites__item">🎬 Hackers</div>
-                <div class="favorites__item">🎬 The Imitation Game</div>
-              </div>
-            </div>
-
-            <div class="profile__section">
-              <h3 class="profile__section-title">Música Favorita</h3>
-              <div class="favorites">
-                <div class="favorites__item">🎵 Kraftwerk - Computer World</div>
-                <div class="favorites__item">
-                  🎵 Aphex Twin - Selected Ambient Works
+            <!-- Contenedor que aparece al hacer clic en la imagen -->
+            <div id="seleccion-habilidades" style="display:none; text-align:center;">
+                <button id="cerrar-habilidades" style="position:absolute; top:10px; right:10px; height: 20px; width:20px; padding:0; border:none; background:transparent; cursor:pointer;">
+                     <img src="img/manuel/cerrar.png" alt="Cerrar" style="height:100%; width:100%;">
+                </button>
+                <!-- <img src="img/manuel/bolsaPokemon.png" alt="Fondo habilidades" style="width:450px; display:block; margin:0 auto 20px;">-->
+                <div class="pokebolas">
+                    <img src="img/manuel/pokebola.png" alt="Resolucion de Problemas" class="poke-habilidad" data-hab="resolucionDeProblemas">
+                    <img src="img/manuel/pokebola.png" alt="Lenguajes de Programacion" class="poke-habilidad" data-hab="lenguajesDeProgramacion">
+                    <img src="img/manuel/pokebola.png" alt="Pensamiento Logico" class="poke-habilidad" data-hab="pensamientoLogico">
+                    <img src="img/manuel/pokebola.png" alt="Trabajo en equipo" class="poke-habilidad" data-hab="trabajoEquipo">
                 </div>
-                <div class="favorites__item">
-                  🎵 Boards of Canada - Music Has the Right
-                </div>
-                <div class="favorites__item">🎵 Autechre - Tri Repetae</div>
-              </div>
+                <div id="desc-habilidad" class="explicacion" style="margin-top:20px; min-height:40px;"></div>
             </div>
-          </div>
-        </div>
-      </section>
+        
     </main>
+    <footer>
+        <h2>Contacto</h2>
 
-    <footer class="footer">
-      <div class="footer__container">
-        <p class="footer__text">
-          &copy; 2024 Grupo 3. Todos los derechos reservados.
-        </p>
-      </div>
+        <p>Teléfono: +54 9 11 1234-5678</p>
+        <p>Email: juanmanuelgasbarro@gmail.com</p>
+        <p>Linkedin: <a href="https://www.linkedin.com/in/jmgasbarro/" target="_blank">www.linkedin.com/in/jmgasbarro</a></p>
+        <p>GitHub: <a href="https://github.com/jmgasbarro" target="_blank">jmgasbarro</a></p>
+   
+        <p class="copyright">© 2025 - Equipo Frontend</p>
     </footer>
+</body>
 
-    <script src="js/profile.js"></script>
-  </body>
+<!--Configuracion js-->
+<script>
+    function mostrarExplicacion(indice) {
+        const explicaciones = document.querySelectorAll('#habilidades .explicacion');
+        explicaciones.forEach((exp, i) => {
+            exp.style.display = (i === indice && exp.style.display === "none") ? "block" : "none";
+        });
+    }
+</script>
+
 </html>

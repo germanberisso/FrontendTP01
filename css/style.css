@@ -562,21 +562,10 @@ body {
   }
 }
 
-/* Color variations for Carlos's page */
-.profile--blue {
-  background-color: #dbeafe !important;
+/* ESTILOS MANUEL */
+.manuelBody {
+  background-image: url('../ruta/de/tu/imagen.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-
-.profile--green {
-  background-color: #dcfce7 !important;
-}
-
-.profile--purple {
-  background-color: #f3e8ff !important;
-}
-
-.profile--orange {
-  background-color: #fed7aa !important;
-}
-
-

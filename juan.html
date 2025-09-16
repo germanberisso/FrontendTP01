@@ -1,108 +1,103 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Juan - Grupo 3</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header class="header">
-      <nav class="header__nav">
-        <a href="index.html" class="header__link">
-          <div class="header__logo">
-            <h1 class="header__title">Grupo 3</h1>
-          </div>
-        </a>
-        <ul class="header__menu">
-          <li class="header__menu-item">
-            <a href="index.html" class="header__link">Inicio</a>
-          </li>
-          <li class="header__menu-item">
-            <a href="bitacora.html" class="header__link">Bitácora</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjeta de Presentación</title>
+  <link rel="stylesheet" href="./css/styles_juan.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Encabezado fijo con título y navegación -->
+  <header>
+    <h1>Tarjeta de Presentación</h1>
+    <nav>
+      <a href="index.html">Portada</a>
+      <a href="bitacora.html">Bitácora</a>
+    </nav>
+  </header>
 
-    <main class="main">
-      <section class="profile">
-        <div class="profile__container">
-          <button
-            class="profile__back"
-            onclick="window.location.href='index.html'"
-          >
-            ← Volver al equipo
-          </button>
+  <!-- Contenido principal de la tarjeta de presentación -->
+  <main>
+    <!-- Imagen de perfil del usuario -->
+    <img src="./img/juan.jpg" alt="Foto de perfil" class="profile-img">
+    <!-- Nombre del usuario -->
+    <h2>Juan Dualibe</h2>
+    <!-- Ubicación actual del usuario -->
+    <p class="location">Córdoba Capital, Argentina</p>
+    <!-- Edad del usuario -->
+    <p class="age">Edad: 33 años</p>
+    <!-- Sección de habilidades -->
+    <section class="skills-section">
+      <h3>Habilidades</h3>
+      <!-- Lista de habilidades técnicas -->
+      <ul>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>React Native</li>
+        <li>PostgreSQL</li>
+      </ul>
+    </section>
+    <!-- Sección de películas favoritas -->
+    <section class="movies-section">
+      <h3>Películas favoritas</h3>
+      <!-- Lista de películas, cada una en un article -->
+      <ul>
+        <li>
+          <img src="./img/El-Padrino.png" alt="El Padrino" class="cover-img" data-modal="movie1">
+          <p class="movie-title">El Padrino</p>
+        </li>
+        <li>
+          <img src="./img/Inception.png" alt="El Origen" class="cover-img" data-modal="movie2">
+          <p class="movie-title">El Origen</p>
+        </li>
+        <li>
+          <img src="./img/Inland-Empire.jpeg" alt="Inland Empire" class="cover-img" data-modal="movie3">
+          <p class="movie-title">Inland Empire</p>
+        </li>
+      </ul>
+    </section>
+    <!-- Sección de música favorita -->
+    <section class="music-section">
+      <h3>Música favorita</h3>
+      <!-- Lista de discos, cada uno en un article -->
+      <ul>
+        <li>
+          <img src="https://via.placeholder.com/150x200?text=The+Bends" alt="The Bends" class="cover-img" data-modal="album1">
+        </li>
+        <li>
+          <img src="https://via.placeholder.com/150x200?text=Take+It+from+the+Man!" alt="Take It from the Man!" class="cover-img" data-modal="album2">
+        </li>
+        <li>
+          <img src="https://via.placeholder.com/150x200?text=Play" alt="Play" class="cover-img" data-modal="album3">
+        </li>
+      </ul>
+    </section>
+  </main>
 
-          <div class="profile__card">
-            <div class="profile__header">
-              <img
-                src="/placeholder.svg?height=250&width=250"
-                alt="Juan"
-                class="profile__image"
-              />
-              <div class="profile__info">
-                <h2 class="profile__name">Juan</h2>
-                <p class="profile__role">UI/UX Designer</p>
-                <p class="profile__location">📍 Córdoba, Argentina</p>
-                <p class="profile__age">🎂 X años</p>
-              </div>
-            </div>
+  <!-- Pie de página -->
+  <footer>
+    <p>© 2025 Juan Dualibe - Todos los derechos reservados</p>
+  </footer>
 
-            <div class="profile__section">
-              <h3 class="profile__section-title">Habilidades</h3>
-              <div class="skills">
-                <span class="skills__item">Figma</span>
-                <span class="skills__item">Adobe Creative Suite</span>
-                <span class="skills__item">Prototipado</span>
-                <span class="skills__item">Design Systems</span>
-                <span class="skills__item">User Research</span>
-                <span class="skills__item">Wireframing</span>
-              </div>
-            </div>
+  <!-- Contenedor del modal para mostrar detalles de películas o discos -->
+  <div class="modal" id="modal">
+    <!-- Contenido del modal -->
+    <div class="modal-content">
+      <!-- Botón para cerrar el modal -->
+      <button class="close-btn">✕</button>
+      <!-- Contenedor para la imagen del modal -->
+      <img src="" alt="Cover" class="modal-img" id="modal-img">
+      <!-- Título del elemento seleccionado -->
+      <h3 id="modal-title"></h3>
+      <!-- Descripción del elemento seleccionado -->
+      <p id="modal-description"></p>
+      <!-- Contenedor para el subtítulo y tráiler -->
+      <div id="modal-trailer"></div>
+    </div>
+  </div>
 
-            <div class="profile__section">
-              <h3 class="profile__section-title">Películas Favoritas</h3>
-              <div class="favorites">
-                <div class="favorites__item">🎬 Her</div>
-                <div class="favorites__item">🎬 The Grand Budapest Hotel</div>
-                <div class="favorites__item">🎬 Amélie</div>
-                <div class="favorites__item">🎬 Lost in Translation</div>
-              </div>
-            </div>
-
-            <div class="profile__section">
-              <h3 class="profile__section-title">Música Favorita</h3>
-              <div class="favorites" id="music">
-                <div class="favorites__item">
-                  🎵 Bon Iver - For Emma, Forever Ago
-                </div>
-                <div class="favorites__item">🎵 Sufjan Stevens - Illinois</div>
-                <div class="favorites__item">🎵 The National - High Violet</div>
-                <div class="favorites__item">🎵 Arcade Fire - Funeral</div>
-              </div>
-              <button class="profile__color-btn" onclick="changeColors()">
-                Cambiar colores
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="footer__container">
-        <p class="footer__text">
-          &copy; 2024 Grupo 3. Todos los derechos reservados.
-        </p>
-      </div>
-    </footer>
-
-    <script src="js/profile.js"></script>
-  </body>
+  <!-- Enlaza el archivo JavaScript para la interactividad -->
+  <script src="./js/juan.js"></script>
+</body>
 </html>
