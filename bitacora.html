@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bitácora - Grupo 3</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="header__nav">
+        <a href="index.html" class="header__link">
+          <div class="header__logo">
+            <h1 class="header__title">Grupo 3</h1>
+          </div>
+        </a>
+        <ul class="header__menu">
+          <li class="header__menu-item">
+            <a href="index.html" class="header__link">Inicio</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="bitacora.html" class="header__link header__link--active"
+              >Bitácora</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="bitacora">
+        <div class="bitacora__container">
+          <h2 class="bitacora__title">Bitácora del Proyecto</h2>
+
+          <article class="bitacora__entry">
+            <h3 class="bitacora__entry-title">Decisiones de Diseño</h3>
+            <div class="bitacora__content">
+              <h4>Paleta de Colores</h4>
+              <p>
+                Decidimos usar una paleta moderna con tonos azules y grises para
+                transmitir profesionalismo y confianza. El color principal
+                (#2563eb) se complementa con grises neutros para crear un diseño
+                limpio y legible.
+              </p>
+
+              <h4>Tipografía</h4>
+              <p>
+                Seleccionamos Poppins de Google Fonts por su excelente
+                legibilidad y aspecto moderno. Esta fuente funciona bien tanto
+                en títulos como en texto corrido, manteniendo la consistencia
+                visual.
+              </p>
+
+              <h4>Layout y Estructura</h4>
+              <p>
+                Optamos por un diseño de grid responsivo que se adapta a
+                diferentes tamaños de pantalla. La navegación es simple y
+                directa, priorizando la experiencia del usuario.
+              </p>
+            </div>
+          </article>
+
+          <article class="bitacora__entry">
+            <h3 class="bitacora__entry-title">Dificultades Encontradas</h3>
+            <div class="bitacora__content">
+              <h4>Responsive Design</h4>
+              <p>
+                <strong>Problema:</strong> Inicialmente tuvimos dificultades
+                para que el grid de miembros se viera bien en dispositivos
+                móviles.
+              </p>
+              <p>
+                <strong>Solución:</strong> Implementamos media queries
+                específicas para cada breakpoint (400px, 900px, 1200px) y
+                ajustamos el número de columnas del grid según el tamaño de
+                pantalla.
+              </p>
+
+              <h4>Metodología BEM</h4>
+              <p>
+                <strong>Problema:</strong> Al principio fue desafiante mantener
+                la consistencia en la nomenclatura BEM entre todos los miembros
+                del equipo.
+              </p>
+              <p>
+                <strong>Solución:</strong> Establecimos una guía de nomenclatura
+                clara y realizamos revisiones de código para asegurar la
+                consistencia.
+              </p>
+
+              <h4>Interactividad con JavaScript</h4>
+              <p>
+                <strong>Problema:</strong> Coordinar las funciones JavaScript
+                entre diferentes páginas sin repetir código.
+              </p>
+              <p>
+                <strong>Solución:</strong> Creamos archivos JS modulares
+                (main.js para la página principal y profile.js para las páginas
+                individuales).
+              </p>
+            </div>
+          </article>
+
+          <article class="bitacora__entry">
+            <h3 class="bitacora__entry-title">Cambios Importantes</h3>
+            <div class="bitacora__content">
+              <h4>Estructura de Archivos</h4>
+              <p>
+                Inicialmente teníamos todos los estilos en un solo archivo CSS.
+                Decidimos mantener un solo archivo pero organizarlo mejor con
+                comentarios y secciones claras para facilitar el mantenimiento.
+              </p>
+
+              <h4>Navegación</h4>
+              <p>
+                Agregamos botones de "Volver al equipo" en cada página
+                individual para mejorar la navegación, cumpliendo con el
+                requerimiento de no depender del botón "Atrás" del navegador.
+              </p>
+
+              <h4>Interactividad</h4>
+              <p>
+                Implementamos diferentes tipos de interacciones en cada página
+                individual para mostrar variedad: toggle de visibilidad, cambio
+                de colores, animaciones y alertas.
+              </p>
+            </div>
+          </article>
+
+          <div class="bitacora__navigation">
+            <button
+              class="bitacora__back-btn"
+              onclick="window.location.href='index.html'"
+            >
+              ← Volver al inicio
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__container">
+        <p class="footer__text">
+          &copy; 2024 Grupo 3. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

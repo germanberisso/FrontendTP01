@@ -1,21 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gasbarro Juan Manuel</title>
-  <!-- Estilos -->
-  <link rel="stylesheet" href="css/style.css">
-  <!-- JS -->
-  <script defer src="js/script.js"></script>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    
-</body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manuel - Grupo 3</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="header__nav">
+        <a href="index.html" class="header__link">
+          <div class="header__logo">
+            <h1 class="header__title">Grupo 3</h1>
+          </div>
+        </a>
+        <ul class="header__menu">
+          <li class="header__menu-item">
+            <a href="index.html" class="header__link">Inicio</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="bitacora.html" class="header__link">Bitácora</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-<footer>
-    <p>© 2025 - Equipo Frontend</p>
-</footer>
+    <main class="main">
+      <section class="profile">
+        <div class="profile__container">
+          <button
+            class="profile__back"
+            onclick="window.location.href='index.html'"
+          >
+            ← Volver al equipo
+          </button>
+
+          <div class="profile__card">
+            <div class="profile__header">
+              <img
+                src="/placeholder.svg?height=250&width=250"
+                alt="Manuel"
+                class="profile__image"
+              />
+              <div class="profile__info">
+                <h2 class="profile__name">Manuel</h2>
+                <p class="profile__role">Backend Developer</p>
+                <p class="profile__location">📍 Buenos Aires, Argentina</p>
+                <p class="profile__age">🎂 X años</p>
+              </div>
+            </div>
+
+            <div class="profile__section">
+              <h3 class="profile__section-title">Habilidades</h3>
+              <div class="skills">
+                <span class="skills__item">Node.js</span>
+                <span class="skills__item">Python</span>
+                <span class="skills__item">MongoDB</span>
+                <span class="skills__item">PostgreSQL</span>
+                <span class="skills__item">Docker</span>
+                <span class="skills__item">AWS</span>
+              </div>
+              <button class="profile__animate-btn" onclick="animateSkills()">
+                Animar habilidades
+              </button>
+            </div>
+
+            <div class="profile__section">
+              <h3 class="profile__section-title">Películas Favoritas</h3>
+              <div class="favorites">
+                <div class="favorites__item">🎬 The Social Network</div>
+                <div class="favorites__item">🎬 Ex Machina</div>
+                <div class="favorites__item">🎬 Hackers</div>
+                <div class="favorites__item">🎬 The Imitation Game</div>
+              </div>
+            </div>
+
+            <div class="profile__section">
+              <h3 class="profile__section-title">Música Favorita</h3>
+              <div class="favorites">
+                <div class="favorites__item">🎵 Kraftwerk - Computer World</div>
+                <div class="favorites__item">
+                  🎵 Aphex Twin - Selected Ambient Works
+                </div>
+                <div class="favorites__item">
+                  🎵 Boards of Canada - Music Has the Right
+                </div>
+                <div class="favorites__item">🎵 Autechre - Tri Repetae</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__container">
+        <p class="footer__text">
+          &copy; 2024 Grupo 3. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/profile.js"></script>
+  </body>
 </html>
