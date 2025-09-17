@@ -4,13 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Germán - Grupo 3</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css" /> <!-- Estilos generales -->
+    <link rel="stylesheet" href="css/germanStyle.css" /> <!-- Estilos premium para tu perfil -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
+    <!-- HEADER igual que index.html y bitacora.html -->
     <header class="header">
       <nav class="header__nav">
         <a href="index.html" class="header__link">
@@ -29,6 +31,7 @@
       </nav>
     </header>
 
+    <!-- MAIN -->
     <main class="main">
       <section class="profile">
         <div class="profile__container">
@@ -42,12 +45,12 @@
           <div class="profile__card">
             <div class="profile__header">
               <img
-                src="/placeholder.svg?height=250&width=250"
+                src="img/ger.png"
                 alt="Germán"
                 class="profile__image"
               />
               <div class="profile__info">
-                <h2 class="profile__name">Germán</h2>
+                <h2 class="profile__name">Germán Rodríguez</h2>
                 <p class="profile__role">Frontend Developer</p>
                 <p class="profile__location">📍 Berisso</p>
                 <p class="profile__age">🎂 46 años</p>
@@ -67,9 +70,9 @@
             <div class="profile__section">
               <h3 class="profile__section-title">Películas Favoritas</h3>
               <div class="favorites" id="movies">
-                <div class="favorites__item">🎬 Volver al futuro</div>
-                <div class="favorites__item">🎬 Rocky</div>
-                <div class="favorites__item">🎬 El padrino</div>
+                <a href="https://www.backtothefuture.com/" class="favorites__item" target="_blank">🎬 Volver al futuro</a>
+                <a href="https://www.imdb.com/es/title/tt0075148/" class="favorites__item" target="_blank">🎬 Rocky</a>
+                <a href="https://www.imdb.com/es/title/tt0068646/" class="favorites__item" target="_blank">🎬 El padrino</a>
               </div>
               <button class="profile__toggle-btn" onclick="toggleMovies()">
                 Mostrar/Ocultar
@@ -79,9 +82,9 @@
             <div class="profile__section">
               <h3 class="profile__section-title">Música Favorita</h3>
               <div class="favorites">
-                <div class="favorites__item">🎵 Gustavo Cerati</div>
-                <div class="favorites__item">🎵 Richard Ashcroft</div>
-                <div class="favorites__item">🎵 The Rasmus</div>
+                <a href="https://www.cerati.com/" class="favorites__item" target="_blank">🎵 Gustavo Cerati</a>
+                <a href="https://www.richardashcroft.com/" class="favorites__item" target="_blank">🎵 Richard Ashcroft</a>
+                <a href="https://www.therasmus.com/" class="favorites__item" target="_blank">🎵 The Rasmus</a>
               </div>
             </div>
           </div>
@@ -89,14 +92,23 @@
       </section>
     </main>
 
+    <!-- FOOTER igual que index.html y bitacora.html -->
     <footer class="footer">
       <div class="footer__container">
-        <p class="footer__text">
-          &copy; 2024 Grupo 3. Todos los derechos reservados.
-        </p>
+        <p class="footer__text">&copy; 2025 Grupo 3. Todos los derechos reservados.</p>
       </div>
     </footer>
 
-    <script src="js/profile.js"></script>
+    <!-- JS toggle películas -->
+    <script>
+      function toggleMovies() {
+        const movies = document.getElementById('movies');
+        if (movies.style.display === 'none' || movies.style.display === '') {
+          movies.style.display = 'flex';
+        } else {
+          movies.style.display = 'none';
+        }
+      }
+    </script>
   </body>
 </html>
