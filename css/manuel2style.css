@@ -1,0 +1,387 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../img/manuel/manuBackGround.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Press Start 2P', cursive;
+    overflow-x: hidden;
+}
+
+
+
+/* HEADER SIMPLIFICADO */
+header {
+    background-color: rgba(51, 51, 51, 0.9);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.nombre {
+    width: 300px;
+    height: auto;
+    animation: heartbeat 1.5s infinite;
+    margin: 0 auto;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.volver {
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    animation: bounce 1.2s infinite alternate;
+}
+
+/* MAIN CON EFECTOS */
+main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.contenido {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 60px 40px 40px 40px;
+    max-width: 1000px;
+    width: 100%;
+    position: relative;
+    overflow: visible;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease;
+    min-height: 500px;
+}
+
+.contenido:hover {
+    transform: translateY(-5px);
+}
+
+/* EFECTO BRILLO */
+.contenido::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0)
+    );
+    transform: rotate(45deg);
+    pointer-events: none;
+    animation: shine 6s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
+}
+
+/* SECCIÓN DEL PERFIL */
+.perfil-section {
+    text-align: center;
+    position: relative;
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+.fotoPerfil {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: float 3s ease-in-out infinite;
+    position: relative;
+    z-index: 10;
+}
+
+.fotoPerfil:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* GLOBO DE DIÁLOGO */
+.speech-bubble {
+    position: absolute;
+    background: white;
+    border: 3px solid #333;
+    border-radius: 20px;
+    padding: 15px;
+    max-width: 280px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 15;
+    top: -120px;
+    right: -100px;
+}
+
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 80px;
+    border: 15px solid transparent;
+    border-top-color: white;
+}
+
+.speech-bubble::before {
+    content: '';
+    position: absolute;
+    bottom: -18px;
+    left: 80px;
+    border: 15px solid transparent;
+    border-top-color: #333;
+}
+
+.speech-text {
+    color: #333;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* POKEBOLAS ALREDEDOR */
+.pokebolas-container {
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 5;
+}
+
+.pokebola {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    position: absolute;
+    transition: all 0.3s ease;
+    animation: bounce 1.2s infinite alternate;
+}
+
+.pokebola:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+.pokebola:nth-child(1) { 
+    top: 50%; 
+    left: -80px; 
+    transform: translateY(-50%);
+}
+.pokebola:nth-child(2) { 
+    top: 50%; 
+    right: -80px; 
+    transform: translateY(-50%);
+}
+.pokebola:nth-child(3) { 
+    bottom: -80px; 
+    left: -40px; 
+}
+.pokebola:nth-child(4) { 
+    bottom: -80px; 
+    right: -40px; 
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-15px); }
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    animation: modalAppear 0.3s ease;
+}
+
+@keyframes modalAppear {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #db2777;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.modal-img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.modal h3 {
+    color: #1e40af;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.modal p {
+    color: #4b5563;
+    font-size: 10px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    white-space: pre-line; /* Permite saltos de línea con \n */
+}
+
+/* FOOTER */
+footer {
+    background-color: rgba(51, 51, 51, 0.9);
+    color: #fff;
+    padding: 20px;
+}
+
+footer h2 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    text-align: left;
+}
+
+footer p {
+    font-size: 10px;
+    margin: 5px 0;
+    text-align: left;
+}
+
+footer .copyright {
+    text-align: center;
+    margin-top: 10px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    body {
+        max-height: none;
+    }
+
+    .contenido {
+        padding: 40px 20px;
+        max-width: 95%;
+        min-height: 350px;
+    }
+
+    .speech-bubble {
+        top: -100px;
+        right: -50px;
+        max-width: 200px;
+        padding: 10px;
+    }
+
+    .speech-bubble::after,
+    .speech-bubble::before {
+        left: 60px;
+    }
+
+    .pokebolas-container {
+        width: 350px;
+        height: 300px;
+    }
+
+    .pokebola {
+        width: 50px;
+        height: 50px;
+    }
+
+    .pokebola:nth-child(1) { 
+        top: 50%; 
+        left: -60px; 
+        transform: translateY(-50%);
+    }
+    .pokebola:nth-child(2) { 
+        top: 50%; 
+        right: -60px; 
+        transform: translateY(-50%);
+    }
+    .pokebola:nth-child(3) { 
+        bottom: -60px; 
+        left: -20px; 
+    }
+    .pokebola:nth-child(4) { 
+        bottom: -60px; 
+        right: -20px; 
+    }
+
+    .fotoPerfil {
+        width: 150px;
+        height: 150px;
+    }
+
+    .nombre {
+        width: 250px;
+    }
+}

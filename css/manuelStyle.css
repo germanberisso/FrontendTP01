@@ -14,16 +14,6 @@ body {
   position: relative;
 }
 
-
-
-header {
-  background-color: #333;
-  color: #fff;
-  position:relative;
-  height: auto;
-  display: inline-block;
-  padding: 10px;
-}
 main {
   flex: 1;
   padding: 20px;
@@ -50,35 +40,45 @@ main {
   z-index: 0;
 }
 /*===========*/
+header {
+  background-color: #333;
+  color: #fff;
+  position: relative;
+  height: auto;
+  padding: 10px;
+  display: flex; 
+  align-items: center; /* Alinear verticalmente al centro */
+  gap: 20px; /* Espacio entre elementos */
+}
+
+/* Contenedor para foto y nombre alineados */
+.perfil-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1; 
+}
+
+.fotoPerfil {
+  height: 150px; /* Reducir un poco para mejor proporción */
+  width: auto;
+}
 .nombre {
   width: 300px;
   height: auto;
-  display: block;
-  margin: 0;
-  position: relative;
-  overflow: hidden;
   animation: heartbeat 1.5s infinite;
 }/*configuracion del nombre*/
 
 .volver {
   width: 100px;
   height: 40px;
-  position: absolute;
-  top: 30px;
-  right: 10px;
   cursor: pointer;
   transition: transform 0.3s;
   animation: bounce 1.2s infinite alternate;
+  position: absolute;
+  top: 20px;
+  right: 10px;
 }/*configuracion del boton volver*/
-
-@keyframes heartbeat {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-} /* Animacion de latido */
 
 /* ======== Estilos de los iconos de redes sociales ======= */
 
@@ -93,6 +93,18 @@ main {
 	height: 20px;
 	margin: 5px;	
 } /*tamaño de los iconos de redes sociales*/
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+} /* Animacion de latido */
+
+
+
 
 title {
   color: #ffffff;
