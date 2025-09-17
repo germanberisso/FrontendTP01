@@ -1,40 +1,84 @@
+// Espera a que el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function() {
-  // Mostrar el selector de habilidades al hacer clic en la imagen principal
- document.getElementById('btn-habilidades').onclick = function() {
-  document.getElementById('seleccion-habilidades').style.display = 'block';
-  // No ocultes la imagen, así permanece visible
-};
-document.getElementById('cerrar-habilidades').onclick = function() {
-  document.getElementById('seleccion-habilidades').style.display = 'none';
-};
-
-  // Descripciones de habilidades
-  const descripciones = {
-    resolucionDeProblemas: {
-      img: 'img/manuel/img-resolucionDeProblemas.png',
-      texto: 'Resolución de problemas: Especialista en el analisis de problemas complejos, descomponerlos en partes manejables y diseñar soluciones eficientes.'
-    },
-    lenguajesDeProgramacion: {
-      img: 'img/manuel/img-lenguajesDeProgramacion.png',
-      texto: 'Dominio de lenguajes de programación: Conocimiento profundo de lenguajes como Python, Java y C++ para escribir código limpio y funcional.'
-    },
-    pensamientoLogico: {
-      img: 'img/manuel/img-pensamientoLogico.png',
-      texto: 'Pensamiento lógico y estructurado: Poseo la habilidad de diseñar algoritmos y estructurar código de manera clara, optimizando rendimiento y mantenibilidad.'
-    },
-    trabajoEquipo: {
-      img: 'img/manuel/img-trabajoEquipo.png',
-      texto: 'Trabajo en equipo y comunicación: Colaboro eficazmente con otros desarrolladores, diseñadores y stakeholders, explicando ideas técnicas de forma clara.'
-    }
-  };
-
-  // Mostrar descripción e imagen al elegir una habilidad
-  document.querySelectorAll('.poke-habilidad').forEach(function(img) {
-    img.onclick = function() {
-      const hab = this.getAttribute('data-hab');
-      const desc = descripciones[hab];
-      document.getElementById('desc-habilidad').innerHTML =
-        `<img src="${desc.img}" alt="" style="width:60px;vertical-align:middle;margin-right:10px;">${desc.texto}`;
+    
+    // Datos de las habilidades para los modales
+    const habilidades = {
+        sobreMi: {
+            img: '../img/manuel/img-sobreMi.png', // Cambiar por la imagen que tengas
+            titulo: 'Sobre mí',
+            descripcion: '\n• Nací en Monte Grande, provincia de Buenos Aires.\n\n• Tengo 35 años.\n\n• Hincha de Independiente.'
+        },
+        actualidad: {
+            img: '../img/manuel/img-actualidad.png', // Cambiar por la imagen que tengas
+            titulo: 'A qué me dedico',
+            descripcion: '\n• Soy profesor de Educación Física\n\n• Entrenador de voley en Cañuelas Fútbol Club.'
+        },
+        objetivos: {
+            img: '../img/manuel/img-objetivos.png', // Cambiar por la imagen que tengas
+            titulo: 'Objetivos',
+            descripcion: 'Mis principales objetivos son:\n\n• Terminar en tiempo y forma la tecnicatura\n\n• Cumplir los objetivos deportivos planteados con los equipos que dirijo\n\n• Adquirir la mayor cantidad de conocimientos y experiencias con la carrera'
+        },
+        hobbies: {
+            img: '../img/manuel/img-hobbies.png', // Cambiar por la imagen que tengas
+            titulo: 'Hobbies',
+            descripcion: '\n• Soy amante de los deportes y los videojuegos.\n\n• También disfruto mucho de series y animes.'
+        }
     };
-  });
+
+    // Selección de elementos del DOM
+    const fotoPerfil = document.getElementById('foto-perfil');
+    const speechBubble = document.getElementById('speech-bubble');
+    const pokebolasContainer = document.getElementById('pokebolas-container');
+    const pokebolas = document.querySelectorAll('.pokebola');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDescription = document.getElementById('modal-description');
+    const closeBtn = document.getElementById('close-btn');
+
+    // Variable para controlar si la interacción está activa
+    let isActive = false;
+
+    // Evento clic en foto de perfil - muestra/oculta pokebolas y globo
+    fotoPerfil.addEventListener('click', function() {
+        if (!isActive) {
+            // Mostrar globo de diálogo y pokebolas
+            speechBubble.style.display = 'block';
+            pokebolasContainer.style.display = 'block';
+            isActive = true;
+        } else {
+            // Ocultar globo de diálogo y pokebolas
+            speechBubble.style.display = 'none';
+            pokebolasContainer.style.display = 'none';
+            isActive = false;
+        }
+    });
+
+    // Eventos clic en cada pokebola - abre modal con información
+    pokebolas.forEach(function(pokebola) {
+        pokebola.addEventListener('click', function() {
+            const habilidad = pokebola.getAttribute('data-habilidad');
+            const data = habilidades[habilidad];
+            
+            // Actualizar contenido del modal
+            modalImg.src = data.img;
+            modalTitle.textContent = data.titulo;
+            modalDescription.textContent = data.descripcion;
+            
+            // Mostrar modal
+            modal.style.display = 'flex';
+        });
+    });
+
+    // Evento para cerrar modal con botón X
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    // Evento para cerrar modal haciendo clic fuera del contenido
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 });
