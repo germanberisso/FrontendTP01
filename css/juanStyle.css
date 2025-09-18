@@ -16,9 +16,7 @@ body {
   background-size: 400%; /* Amplía el gradiente para la animación */
   animation: colorShift 15s ease infinite; /* Aplica la animación de cambio de color */
   font-family: 'Poppins', sans-serif; /* Usa la fuente Poppins */
-  
 }
-
 
 /* Animación para el fondo que cambia de posición suavemente */
 @keyframes colorShift {
@@ -179,10 +177,15 @@ section {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover igual que las portadas */
+/* Efecto hover: escala la imagen y añade sombra */
 .habilidades img:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Cambia el color del texto al hacer hover sobre las imágenes de habilidades */
+.habilidades li:hover p {
+  color: #1e40af; /* Azul oscuro, consistente con otros elementos al hacer hover */
 }
 
 .habilidades p {
@@ -258,9 +261,9 @@ section li::before {
   font-size: 0.8rem;
 }
 
-/* Cambia el color del texto al hacer hover */
-section li:hover, article:hover {
-  color: #1e40af;
+/* Cambia el color del texto al hacer hover sobre los artículos (portadas) */
+article:hover .movie-title {
+  color: #1e40af; /* Azul oscuro, consistente con otros elementos al hacer hover */
 }
 
 /* Estiliza las imágenes de portadas (películas y discos) */
@@ -288,6 +291,37 @@ section li:hover, article:hover {
   margin-top: 0.25rem; /* Reducido para mantener la tarjeta compacta */
 }
 
+/* Estiliza la sección de contacto */
+.contacto ul {
+  list-style: none; /* Sin viñetas predeterminadas */
+  padding: 0;
+  display: flex; /* Usa flexbox para alinear elementos */
+  flex-direction: column; /* Apila los ítems verticalmente */
+  align-items: center; /* Centra los ítems horizontalmente */
+  gap: 0.5rem; /* Espacio entre ítems de contacto */
+}
+
+.contacto li {
+  font-size: 0.95rem;
+  color: #4b5563; /* Gris oscuro, consistente con otros textos */
+  transition: color 0.3s ease; /* Transición para el hover */
+}
+
+.contacto li:hover {
+  color: #1e40af; /* Cambio de color al hacer hover, consistente con otros elementos */
+}
+
+.contacto a {
+  color: #1e40af; /* Color de los enlaces igual al de los títulos */
+  text-decoration: none; /* Sin subrayado por defecto */
+  transition: color 0.3s ease; /* Transición para el hover */
+}
+
+.contacto a:hover {
+  color: #db2777; /* Cambio a rosa vibrante al hacer hover, consistente con la navegación */
+  text-decoration: underline; /* Subrayado al hacer hover */
+}
+
 /* Estiliza el pie de página */
 footer {
   width: 100%; /* Ocupa todo el ancho de la página */  
@@ -305,7 +339,6 @@ footer {
 footer p {
   margin: 0;
 }
-
 
 /* Estiliza el contenedor del modal */
 .modal {
@@ -445,7 +478,7 @@ footer p {
     padding: 0.3rem 0.8rem;
   }
 
-    main {
+  main {
     padding: 1.5rem; /* Reduce el padding */    
   }
 
@@ -494,5 +527,14 @@ footer p {
 
   footer {
     font-size: 0.8rem; /* Reduce el tamaño del texto */    
+  }
+
+  /* Ajusta la sección de contacto en móviles */
+  .contacto ul {
+    gap: 0.3rem; /* Reduce el espacio entre ítems en móviles */
+  }
+
+  .contacto li {
+    font-size: 0.85rem; /* Reduce el tamaño del texto en móviles */
   }
 }
