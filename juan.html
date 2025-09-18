@@ -4,100 +4,155 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tarjeta de Presentación</title>
-  <link rel="stylesheet" href="./css/styles_juan.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/juanStyle.css">
 </head>
 <body>
-  <!-- Encabezado fijo con título y navegación -->
+  <!-- Contenedor principal del cuerpo, usa Flexbox para apilar secciones verticalmente -->
   <header>
+    <!-- Encabezado fijo que contiene el título y la navegación -->
     <h1>Tarjeta de Presentación</h1>
+    <!-- Título principal de la página -->
     <nav>
+      <!-- Barra de navegación con enlaces internos -->
       <a href="index.html">Portada</a>
+      <!-- Enlace a la página principal -->
       <a href="bitacora.html">Bitácora</a>
+      <!-- Enlace a la página de bitácora -->
     </nav>
   </header>
-
-  <!-- Contenido principal de la tarjeta de presentación -->
+  
   <main>
-    <!-- Imagen de perfil del usuario -->
-    <img src="./img/juan.jpg" alt="Foto de perfil" class="profile-img">
-    <!-- Nombre del usuario -->
-    <h2>Juan Dualibe</h2>
-    <!-- Ubicación actual del usuario -->
-    <p class="location">Córdoba Capital, Argentina</p>
-    <!-- Edad del usuario -->
-    <p class="age">Edad: 33 años</p>
-    <!-- Sección de habilidades -->
-    <section class="skills-section">
-      <h3>Habilidades</h3>
-      <!-- Lista de habilidades técnicas -->
+    <!-- Sección principal que contiene la información personal y secciones de contenido -->
+    <img src="./img/juan/juan.png" alt="Foto de perfil de Juan Dualibe" class="profile-img">
+    <!-- Imagen de perfil del usuario con clase para estilizado -->
+    <h1>Juan Dualibe</h1>
+    <!-- Nombre del propietario de la tarjeta -->
+    <p class="location">Córdoba, Argentina</p>
+    <!-- Ubicación del usuario con clase para estilizado -->
+    <p class="age">33 años</p>
+    <!-- Edad del usuario con clase para estilizado -->
+    
+    <section class="habilidades">
+      <!-- Sección dedicada a las habilidades del usuario -->
+      <h2>Habilidades</h2>
+      <!-- Subtítulo de la sección de habilidades -->
       <ul>
-        <li>JavaScript</li>
-        <li>React</li>
-        <li>React Native</li>
-        <li>PostgreSQL</li>
+        <!-- Lista desordenada para mostrar las habilidades -->
+        <li>
+          <!-- Elemento de lista para cada habilidad -->
+          <img src="img/juan/JavaScript.png" alt="">
+          <!-- Icono o imagen representando JavaScript -->
+          <br>
+          <!-- Salto de línea para separar la imagen del texto -->
+          <p>JavaScript</p>
+          <!-- Nombre de la habilidad -->
+        </li>
+        <li>
+          <img src="img/juan/react.png" alt="">
+          <br>
+          <p>React</p>
+        </li>
+        <li>
+          <img src="img/juan/java.png" alt="">
+          <br>
+          <p>Java</p>
+        </li>
+        <li>
+          <img src="img/juan/postgresql.png" alt="">
+          <br>
+          <p>PostgreSQL</p>
+        </li>
       </ul>
     </section>
-    <!-- Sección de películas favoritas -->
-    <section class="movies-section">
-      <h3>Películas favoritas</h3>
-      <!-- Lista de películas, cada una en un article -->
+    
+    <section>
+      <!-- Sección dedicada a las películas favoritas -->
+      <h2>Películas favoritas</h2>
+      <!-- Subtítulo de la sección de películas -->
       <ul>
+        <!-- Lista desordenada para mostrar las películas -->
         <li>
-          <img src="./img/El-Padrino.png" alt="El Padrino" class="cover-img" data-modal="movie1">
-          <p class="movie-title">El Padrino</p>
+          <!-- Elemento de lista para cada película -->
+          <article class="movie" data-title="El Padrino" data-description="Un clásico del cine dirigido por Francis Ford Coppola, que narra la historia de la familia mafiosa Corleone." data-trailer="https://www.youtube.com/embed/UaVTIH8mujA?controls=1">
+            <!-- Artículo con clase "movie" y atributos de datos para título, descripción y trailer -->
+            <img src="./img/juan/El-Padrino.png" alt="Portada de El Padrino" class="cover-img">
+            <!-- Imagen de la portada de la película con clase para estilizado -->
+            <p class="movie-title">El Padrino</p>
+            <!-- Título de la película debajo de la portada -->
+          </article>
         </li>
         <li>
-          <img src="./img/Inception.png" alt="El Origen" class="cover-img" data-modal="movie2">
-          <p class="movie-title">El Origen</p>
+          <article class="movie" data-title="El Origen" data-description="Dirigida por Christopher Nolan, una película de ciencia ficción sobre el robo de secretos a través de los sueños." data-trailer="https://www.youtube.com/embed/YoHD9XEInc0?controls=1">
+            <img src="./img/juan/Inception.png" alt="Portada de El Origen" class="cover-img">
+            <p class="movie-title">El Origen</p>
+          </article>
         </li>
         <li>
-          <img src="./img/Inland-Empire.jpeg" alt="Inland Empire" class="cover-img" data-modal="movie3">
-          <p class="movie-title">Inland Empire</p>
+          <article class="movie" data-title="Inland Empire" data-description="Una obra experimental de David Lynch que explora la realidad y la percepción." data-trailer="https://www.youtube.com/embed/kS2v-icgBj4?si=VOdYw5tBu3-xMQWQ?controls=1">
+            <img src="./img/juan/Inland-Empire.jpeg" alt="Portada de Inland Empire" class="cover-img">
+            <p class="movie-title">Inland Empire</p>
+          </article>
         </li>
       </ul>
     </section>
-    <!-- Sección de música favorita -->
-    <section class="music-section">
-      <h3>Música favorita</h3>
-      <!-- Lista de discos, cada uno en un article -->
+    
+    <section>
+      <!-- Sección dedicada a los discos favoritos -->
+      <h2>Discos favoritos</h2>
+      <!-- Subtítulo de la sección de discos -->
       <ul>
+        <!-- Lista desordenada para mostrar los discos -->
         <li>
-          <img src="https://via.placeholder.com/150x200?text=The+Bends" alt="The Bends" class="cover-img" data-modal="album1">
+          <article class="album" data-title="The Bends" data-description="El segundo álbum de Radiohead, una obra maestra del rock alternativo de los 90." data-playlist="https://open.spotify.com/embed/album/35UJLpClj5EDrhpNIi4DFg">
+            <!-- Artículo con clase "album" y atributos de datos para título, descripción y playlist -->
+            <img src="./img/juan/radiohead-the-bends.jpg" alt="Portada de The Bends" class="cover-img">
+            <!-- Imagen de la portada del disco con clase para estilizado -->
+            <p class="movie-title">Radiohead - The Bends</p>
+            <!-- Título del disco debajo de la portada -->
+          </article>
         </li>
         <li>
-          <img src="https://via.placeholder.com/150x200?text=Take+It+from+the+Man!" alt="Take It from the Man!" class="cover-img" data-modal="album2">
+          <article class="album" data-title="Take It from the Man!" data-description="Un álbum psicodélico de The Brian Jonestown Massacre, lleno de energía retro." data-playlist="https://open.spotify.com/embed/album/2mvDGK1PhTwzxofG7wB6i5">
+            <img src="./img/juan/BJM.jpeg" alt="Portada de Take It from the Man!" class="cover-img">
+            <p class="movie-title">The Brian Jonestown Massacre - Take It from the Man!</p>
+          </article>
         </li>
         <li>
-          <img src="https://via.placeholder.com/150x200?text=Play" alt="Play" class="cover-img" data-modal="album3">
+          <article class="album" data-title="Monster" data-description="Un álbum rock alternativo de R.E.M, cargado de guitarras crudas y vibrante energía." data-playlist="https://open.spotify.com/embed/album/17mS71JVgCCYLVdVcG0aUT">
+            <img src="./img/juan/REM.webp" alt="Portada de Monster" class="cover-img">
+            <p class="movie-title">R.E.M - Monster</p>
+          </article>
         </li>
       </ul>
     </section>
   </main>
-
-  <!-- Pie de página -->
+  
   <footer>
+    <!-- Pie de página con información de derechos -->
     <p>© 2025 Juan Dualibe - Todos los derechos reservados</p>
+    <!-- Texto de copyright -->
   </footer>
-
-  <!-- Contenedor del modal para mostrar detalles de películas o discos -->
+  
   <div class="modal" id="modal">
-    <!-- Contenido del modal -->
+    <!-- Contenedor del modal para mostrar detalles de películas y discos -->
     <div class="modal-content">
-      <!-- Botón para cerrar el modal -->
+      <!-- Contenido interno del modal -->
       <button class="close-btn">✕</button>
-      <!-- Contenedor para la imagen del modal -->
-      <img src="" alt="Cover" class="modal-img" id="modal-img">
-      <!-- Título del elemento seleccionado -->
-      <h3 id="modal-title"></h3>
-      <!-- Descripción del elemento seleccionado -->
-      <p id="modal-description"></p>
-      <!-- Contenedor para el subtítulo y tráiler -->
-      <div id="modal-trailer"></div>
+      <!-- Botón para cerrar el modal -->
+      <img src="" alt="" class="modal-img">
+      <!-- Imagen que se cargará dinámicamente en el modal -->
+      <h3></h3>
+      <!-- Título dinámico del contenido del modal -->
+      <p></p>
+      <!-- Descripción dinámica del contenido del modal -->
+      <div id="modal-media"></div>
+      <!-- Contenedor para el iframe de trailer o playlist -->
     </div>
   </div>
-
-  <!-- Enlaza el archivo JavaScript para la interactividad -->
-  <script src="./js/juan.js"></script>
+  
+  <script src="js/juan.js">
+  /* Enlaza el script JavaScript que maneja la funcionalidad del modal y eventos */
+  </script>
 </body>
 </html>

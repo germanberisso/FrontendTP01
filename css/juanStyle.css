@@ -19,6 +19,7 @@ body {
   
 }
 
+
 /* Animación para el fondo que cambia de posición suavemente */
 @keyframes colorShift {
   0% { background-position: 0% 50%; }
@@ -79,7 +80,7 @@ main {
   border-radius: 1.5rem; /* Bordes redondeados */
   max-width: 40rem; /* Ancho máximo, igual que antes */
   width: 100%; /* Ocupa todo el ancho disponible hasta el máximo */
-  padding: 2rem; /* Espaciado interno */
+  padding: 6rem 2rem 2rem; /* Padding superior aumentado para el header fijo, laterales y inferior */
   position: relative; /* Para posicionar el pseudo-elemento de brillo */
   overflow: hidden; /* Oculta el exceso del brillo */
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Sombra suave */
@@ -137,7 +138,7 @@ main::before {
 }
 
 /* Estiliza el título del nombre */
-main h2 {
+main h1 {
   font-size: 2rem; /* Tamaño grande */
   font-weight: 700; /* Negrita */
   color: #1e40af; /* Color azul oscuro */
@@ -158,6 +159,34 @@ main h2 {
 /* Estiliza las secciones (habilidades, películas, música) */
 section {
   margin: 1.5rem 0; /* Espaciado vertical */
+}
+
+/* Imágenes de habilidades alineadas igual que las portadas */
+.habilidades ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Imágenes de habilidades igual que .cover-img pero sin cursor */
+.habilidades img {
+  width: 12rem;
+  height: 12rem;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover igual que las portadas */
+.habilidades img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.habilidades p {
+  text-align: center;
 }
 
 /* Estiliza los subtítulos de las secciones */
@@ -199,6 +228,12 @@ section ul {
   gap: 5.5rem; /* Espacio entre elementos */
 }
 
+/* Ajusta la lista de discos favoritos para responsividad */
+section:has(h2:where(:text("Discos favoritos"))) ul {
+  justify-content: center; /* Centra las tarjetas horizontalmente */
+  gap: 2rem; /* Reduce el espacio entre tarjetas para mejor responsividad */
+}
+
 /* Estiliza los ítems de habilidades y artículos de películas/discos */
 section li, article {
   font-size: 0.95rem;
@@ -209,9 +244,14 @@ section li, article {
   transition: color 0.3s ease; /* Transición para el hover */
 }
 
+/* Ajusta los artículos de discos favoritos */
+section:has(h2:where(:text("Discos favoritos"))) article {
+  margin-top: 0; /* Elimino margin-top ya que main lo maneja */
+}
+
 /* Ícono de estrella antes de cada ítem de habilidades */
 section li::before {
-  content: '★';
+  content: '';
   position: absolute;
   left: 0;
   color: #db2777; /* Rosa vibrante */
@@ -225,8 +265,9 @@ section li:hover, article:hover {
 
 /* Estiliza las imágenes de portadas (películas y discos) */
 .cover-img {
-  width: 6rem; /* Ancho fijo */
-  height: 8rem; /* Altura fija */
+  width: 12rem; /* Ancho fijo */
+  height: 12rem; /* Altura fija */
+  max-width: 100%; /* Asegura que la imagen no desborde en móviles */
   object-fit: cover; /* Ajusta la imagen sin distorsión */
   border-radius: 0.5rem; /* Bordes redondeados */
   cursor: pointer; /* Indica que es clicable */
@@ -239,12 +280,12 @@ section li:hover, article:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Estiliza el título de las películas debajo de las portadas */
+/* Estiliza el título de las películas/discos debajo de las portadas */
 .movie-title {
   font-size: 0.9rem;
   color: #4b5563; /* Gris oscuro */
   text-align: center;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem; /* Reducido para mantener la tarjeta compacta */
 }
 
 /* Estiliza el pie de página */
@@ -265,6 +306,7 @@ footer p {
   margin: 0;
 }
 
+
 /* Estiliza el contenedor del modal */
 .modal {
   display: none; /* Oculto por defecto */
@@ -276,7 +318,7 @@ footer p {
   background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Debajo del header (z-index: 1100) */
+  z-index: 1200; /* Aumentado para estar por encima del header (z-index: 1100) */
 }
 
 /* Estiliza el contenido del modal */
@@ -313,33 +355,48 @@ footer p {
   margin-bottom: 1rem;
 }
 
-/* Contenedor responsivo para el iframe con relación de aspecto 16:9 */
+/* Contenedor para iframes (YouTube para películas, Spotify para discos) */
 .video-container {
   position: relative;
-  padding-bottom: 56.25%; /* Relación de aspecto 16:9 (9/16 = 0.5625) */
-  height: 0;
-  overflow: hidden;
+  width: 100%;
+  height: auto; /* Altura automática para permitir alturas fijas o relativas */
   margin-top: 1rem;
 }
 
 /* Estiliza el iframe dentro del contenedor */
 .video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
   border: none; /* Sin borde */
   border-radius: 0.5rem; /* Bordes redondeados */
 }
 
-/* Estiliza el contenedor del tráiler (subtítulo e iframe) */
-#modal-trailer {
+/* Ajusta el contenedor para YouTube (relación de aspecto 16:9) */
+.video-container.youtube {
+  padding-bottom: 56.25%; /* Relación de aspecto 16:9 (9/16 = 0.5625) */
+  height: 0;
+  overflow: hidden;
+}
+
+/* Ajusta el iframe de YouTube dentro del contenedor */
+.video-container.youtube iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+/* Ajusta el contenedor para Spotify (altura fija) */
+.video-container.spotify {
+  height: 352px; /* Altura fija para iframes de Spotify */
+}
+
+/* Estiliza el contenedor del media (subtítulo e iframe) */
+#modal-media {
   margin-top: 1rem;
 }
 
-/* Estiliza el subtítulo del tráiler */
-#modal-trailer h4 {
+/* Estiliza el subtítulo del media */
+#modal-media h4 {
   font-size: 1rem;
   font-weight: 600;
   color: #1e40af;
@@ -360,13 +417,13 @@ footer p {
   cursor: pointer;
   font-size: 1rem;
   line-height: 1.5rem;
+  z-index: 1300; /* Aumentado para estar por encima del header y modal */
 }
 
 /* Media query para pantallas pequeñas (móviles) */
 @media (max-width: 640px) {
   body {
-    padding: 0;
-    margin-top: 0rem;
+    padding-top: 0; /* Elimino padding superior del body en móviles */
   }
 
   header {
@@ -388,9 +445,8 @@ footer p {
     padding: 0.3rem 0.8rem;
   }
 
-  main {
-    padding: 1.5rem; /* Reduce el padding */
-    margin: 1rem auto; /* Menos margen vertical en móviles */
+    main {
+    padding: 1.5rem; /* Reduce el padding */    
   }
 
   .profile-img {
@@ -410,9 +466,17 @@ footer p {
     font-size: 0.9rem; /* Reduce el tamaño del texto */
   }
 
-  .cover-img {
-    width: 5rem; /* Reduce el tamaño de las portadas */
-    height: 7rem;
+  /* Ajusta las imágenes de portadas para discos en móviles */
+  section:has(h2:where(:text("Discos favoritos"))) .cover-img {
+    width: 4rem; /* Reduce el tamaño de la imagen */
+    height: 3rem; /* Altura reducida para achicar la tarjeta */
+    max-width: 30vw; /* Limita el ancho al 30% del viewport */
+  }
+
+  /* Ajusta la lista de discos favoritos en móviles */
+  section:has(h2:where(:text("Discos favoritos"))) ul {
+    gap: 1rem; /* Reduce aún más el espacio entre tarjetas */
+    justify-content: center; /* Centra las tarjetas */
   }
 
   .modal-img {
@@ -422,6 +486,10 @@ footer p {
 
   .modal-content {
     max-width: 90%; /* Ajusta el ancho del modal en móviles para ser responsivo */
+  }
+
+  .video-container.spotify {
+    height: 152px; /* Altura reducida para Spotify en móviles */
   }
 
   footer {

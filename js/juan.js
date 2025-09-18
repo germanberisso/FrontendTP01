@@ -1,89 +1,114 @@
-// Objeto que almacena los datos de las películas y discos para los modales
-const modalsData = {
-  movie1: {
-    img: './img/El-Padrino.png', // URL de la portada de El Padrino
-    title: 'El Padrino (Francis Ford Coppola, 1972)', // Título de la película con director y año
-    description: 'Un épico retrato de la mafia siciliana en Nueva York, centrado en la familia Corleone y su lucha por el poder.', // Descripción breve
-    trailer: 'https://www.youtube.com/embed/iOyQx7MXaz0?controls=1' // URL del tráiler de El Padrino con controles habilitados
-  },
-  movie2: {
-    img: './img/Inception.png',
-    title: 'El Origen (Christopher Nolan, 2010)', // Título de la película con director y año
-    description: 'Un ladrón especializado en infiltrarse en sueños enfrenta el desafío definitivo: implantar una idea en la mente de una persona.',
-    trailer: 'https://www.youtube.com/embed/OCEkhKvm-hU?controls=1' // URL del tráiler de El Origen con controles habilitados
-  },
-  movie3: {
-    img: './img/Inland-Empire.jpeg',
-    title: 'Inland Empire (David Lynch, 2006)', // Título de la película con director y año
-    description: 'Una actriz se pierde en la realidad y la ficción mientras trabaja en una película maldita, en el estilo surrealista de Lynch.',
-    trailer: 'https://www.youtube.com/embed/kS2v-icgBj4?controls=1' // URL del tráiler de Inland Empire con controles habilitados
-  },
-  album1: {
-    img: 'https://via.placeholder.com/150x200?text=The+Bends',
-    title: 'The Bends (Radiohead, 1995)',
-    description: 'El segundo álbum de Radiohead, una obra maestra del rock alternativo con temas introspectivos y melodías icónicas.'
-  },
-  album2: {
-    img: 'https://via.placeholder.com/150x200?text=Take+It+from+the+Man!',
-    title: 'Take It from the Man! (The Brian Jonestown Massacre, 1996)',
-    description: 'Un álbum psicodélico que captura la esencia del rock de los 60 con un toque moderno y experimental.'
-  },
-  album3: {
-    img: 'https://via.placeholder.com/150x200?text=Play',
-    title: 'Play (Moby, 1999)',
-    description: 'Un álbum electrónico que mezcla samples de gospel y blues con beats modernos, un hito en la música electrónica.'
-  }
-};
+document.addEventListener('DOMContentLoaded', () => {
+  // Escucha el evento 'DOMContentLoaded' para ejecutar el código cuando el DOM esté completamente cargado
 
-// Selecciona el contenedor del modal por su ID
-const modal = document.getElementById('modal');
-// Selecciona la imagen del modal
-const modalImg = document.getElementById('modal-img');
-// Selecciona el título del modal
-const modalTitle = document.getElementById('modal-title');
-// Selecciona la descripción del modal
-const modalDescription = document.getElementById('modal-description');
-// Selecciona el contenedor del tráiler (subtítulo e iframe)
-const modalTrailer = document.getElementById('modal-trailer');
-// Selecciona el botón de cerrar del modal
-const closeBtn = document.querySelector('.close-btn');
-// Selecciona todas las imágenes de portadas
-const coverImages = document.querySelectorAll('.cover-img');
+  const modal = document.getElementById('modal');
+  // Obtiene el elemento del modal por su ID para controlarlo
 
-// Añade un evento de clic a cada imagen de portada
-coverImages.forEach(img => {
-  img.addEventListener('click', () => {
-    const modalId = img.getAttribute('data-modal'); // Obtiene el identificador del modal
-    const data = modalsData[modalId]; // Obtiene los datos correspondientes del objeto
-    modalImg.src = data.img; // Actualiza la imagen del modal
-    modalTitle.textContent = data.title; // Actualiza el título del modal
-    modalDescription.textContent = data.description; // Actualiza la descripción del modal
-    // Maneja el tráiler solo para elementos con la propiedad trailer
-    modalTrailer.innerHTML = ''; // Limpia el contenedor del tráiler
-    if (data.trailer) {
-      modalTrailer.innerHTML = `
-        <h4>Tráiler:</h4>
-        <div class="video-container">
-          <iframe src="${data.trailer}" title="YouTube video player" frameborder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  const modalImg = document.querySelector('.modal-img');
+  // Selecciona la imagen dentro del modal por su clase para actualizarla dinámicamente
+
+  const modalTitle = document.querySelector('.modal-content h3');
+  // Selecciona el título dentro del contenido del modal por su selector para actualizarlo
+
+  const modalDescription = document.querySelector('.modal-content p');
+  // Selecciona la descripción dentro del contenido del modal por su selector para actualizarla
+
+  const modalMedia = document.getElementById('modal-media');
+  // Obtiene el contenedor de medios (iframe) por su ID para insertar contenido multimedia
+
+  const closeBtn = document.querySelector('.close-btn');
+  // Selecciona el botón de cerrar del modal por su clase para manejarlo
+
+  // Función para abrir el modal
+  function openModal(imgSrc, title, description, mediaUrl, isAlbum) {
+    // Define una función que recibe la fuente de la imagen, título, descripción, URL de medios y un booleano para indicar si es un álbum
+    modalImg.src = imgSrc;
+    // Asigna la fuente de la imagen al elemento modalImg
+    modalImg.alt = `Portada de ${title}`;
+    // Establece el atributo alt de la imagen con un texto descriptivo
+    modalTitle.textContent = title;
+    // Actualiza el texto del título con el valor proporcionado
+    modalDescription.textContent = description;
+    // Actualiza el texto de la descripción con el valor proporcionado
+    
+    if (mediaUrl) {
+      // Verifica si hay una URL de medios disponible
+      const mediaType = isAlbum ? 'Lista de reproducción:' : 'Tráiler:';
+      // Determina el tipo de medio (álbum o trailer) basado en el parámetro isAlbum
+      const iframeSrc = isAlbum ? mediaUrl : mediaUrl;
+      // Asigna la URL de medios como fuente del iframe (misma URL para ambos casos en este contexto)
+      const iframeHeight = isAlbum ? '352px' : '315px';
+      // Define la altura del iframe según si es un álbum (352px) o un trailer (315px)
+      modalMedia.innerHTML = `
+        <h4>${mediaType}</h4>
+        <div class="video-container" style="${isAlbum ? 'height: 352px;' : ''}">
+          <iframe src="${iframeSrc}" width="100%" height="${iframeHeight}" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
         </div>
       `;
+      // Inserta dinámicamente un encabezado y un iframe en el contenedor de medios con las propiedades especificadas
+    } else {
+      modalMedia.innerHTML = '';
+      // Si no hay URL de medios, limpia el contenido del contenedor
     }
-    modal.style.display = 'flex'; // Muestra el modal
-  });
-});
-
-// Añade un evento de clic al botón de cerrar para ocultar el modal
-closeBtn.addEventListener('click', () => {
-  modal.style.display = 'none';
-  modalTrailer.innerHTML = ''; // Limpia el tráiler al cerrar para detener el video
-});
-
-// Añade un evento de clic al contenedor del modal para cerrarlo si se hace clic fuera del contenido
-modal.addEventListener('click', (e) => {
-  if (e.target === modal) {
-    modal.style.display = 'none';
-    modalTrailer.innerHTML = ''; // Limpia el tráiler al cerrar para detener el video
+    
+    modal.style.display = 'flex';
+    // Muestra el modal estableciendo su estilo de visualización a 'flex'
   }
+
+  // Añadir event listeners a las portadas de películas
+  document.querySelectorAll('.movie').forEach(movie => {
+    // Selecciona todos los elementos con clase 'movie' y recorre cada uno
+    movie.addEventListener('click', () => {
+      // Añade un evento de clic a cada elemento 'movie'
+      const imgSrc = movie.querySelector('img').src;
+      // Obtiene la fuente de la imagen dentro del elemento 'movie'
+      const title = movie.dataset.title;
+      // Obtiene el título desde el atributo data-title
+      const description = movie.dataset.description;
+      // Obtiene la descripción desde el atributo data-description
+      const trailer = movie.dataset.trailer;
+      // Obtiene la URL del trailer desde el atributo data-trailer
+      openModal(imgSrc, title, description, trailer, false);
+      // Llama a la función openModal con los datos obtenidos, indicando que no es un álbum
+    });
+  });
+
+  // Añadir event listeners a las portadas de discos
+  document.querySelectorAll('.album').forEach(album => {
+    // Selecciona todos los elementos con clase 'album' y recorre cada uno
+    album.addEventListener('click', () => {
+      // Añade un evento de clic a cada elemento 'album'
+      const imgSrc = album.querySelector('img').src;
+      // Obtiene la fuente de la imagen dentro del elemento 'album'
+      const title = album.dataset.title;
+      // Obtiene el título desde el atributo data-title
+      const description = album.dataset.description;
+      // Obtiene la descripción desde el atributo data-description
+      const playlist = album.dataset.playlist;
+      // Obtiene la URL de la playlist desde el atributo data-playlist
+      openModal(imgSrc, title, description, playlist, true);
+      // Llama a la función openModal con los datos obtenidos, indicando que es un álbum
+    });
+  });
+
+  // Cerrar modal al hacer clic en el botón de cerrar
+  closeBtn.addEventListener('click', () => {
+    // Añade un evento de clic al botón de cerrar
+    modal.style.display = 'none';
+    // Oculta el modal estableciendo su estilo de visualización a 'none'
+    modalMedia.innerHTML = ''; // Detiene el audio/video al cerrar
+    // Limpia el contenido del contenedor de medios para detener la reproducción
+  });
+
+  // Cerrar modal al hacer clic fuera del contenido
+  modal.addEventListener('click', (e) => {
+    // Añade un evento de clic al modal
+    if (e.target === modal) {
+      // Verifica si el clic fue fuera del contenido del modal (en el fondo)
+      modal.style.display = 'none';
+      // Oculta el modal estableciendo su estilo de visualización a 'none'
+      modalMedia.innerHTML = ''; // Detiene el audio/video al cerrar
+      // Limpia el contenido del contenedor de medios para detener la reproducción
+    }
+  });
 });

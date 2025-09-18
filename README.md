@@ -81,7 +81,7 @@ _[El enlace se agregará una vez desplegado en Vercel]_
 ## Integrantes del Equipo
 
 - **Germán** - Frontend Developer
-- **Juan** - UI/UX Designer
+- **Juan** - Full Stack Developer
 - **Manuel** - Backend Developer
 - **Nicolas** - Project Manager
 
