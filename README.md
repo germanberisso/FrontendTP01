@@ -80,7 +80,7 @@ _[El enlace se agregará una vez desplegado en Vercel]_
 
 ## Integrantes del Equipo
 
-- **Germán** - Frontend Developer
+- **Germán** - Full Stack Developer
 - **Juan** - Full Stack Developer
 - **Manuel** - Backend Developer
 - **Nicolas** - Project Manager
