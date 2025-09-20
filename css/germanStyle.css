@@ -1,0 +1,165 @@
+/* ===== ESTILOS GERMAN ===== */
+
+/* Contenedor principal */
+.profile__container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+  padding: 1rem;
+  animation: fadeInUp 1s ease;
+}
+
+/* Card principal con gradiente y sombra */
+.profile__card {
+  background: linear-gradient(135deg, #b2dfdb, #e0f7fa);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  max-width: 900px;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile__card:hover {
+  transform: translateY(-7px) scale(1.02);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* Animación de fade + slide */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Header de la card */
+.profile__header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.profile__image {
+  border-radius: 50%;
+  border: 4px solid #00796b;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  animation: fadeInUp 1s ease 0.3s both;
+}
+
+/* Info básica */
+.profile__name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #004d40;
+}
+
+.profile__role {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #00695c;
+}
+
+.profile__location,
+.profile__age {
+  font-size: 1rem;
+  color: #004d40;
+  margin-top: 0.3rem;
+}
+
+/* Secciones con animación de entrada */
+.profile__section {
+  margin-top: 1.5rem;
+  animation: fadeInUp 1s ease both;
+}
+
+/* Títulos de secciones con borde degradado */
+.profile__section-title {
+  font-size: 1.6rem;
+  color: #00796b;
+  margin-bottom: 0.8rem;
+  border-bottom: 3px solid #004d40;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
+/* Skills */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.skills__item {
+  background: linear-gradient(135deg, #004d40, #00796b);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  cursor: default;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills__item:hover {
+  transform: scale(1.15);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+/* Favoritos (Películas y Música) */
+.favorites {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.favorites__item {
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(135deg, #00796b, #004d40);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.favorites__item:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* Botón mostrar/ocultar películas */
+.profile__toggle-btn {
+  margin-top: 0.8rem;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  background-color: #004d40;
+  color: #fff;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.profile__toggle-btn:hover {
+  background-color: #00695c;
+  transform: scale(1.05);
+}
+
+/* Botón volver al index */
+.profile__back {
+  background-color: transparent;
+  border: none;
+  color: #00796b;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.profile__back:hover {
+  color: #004d40;
+  transform: scale(1.05);
+}
