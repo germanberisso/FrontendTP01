@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nicolás - Grupo 3</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/nicolasStyle.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
       rel="stylesheet"
@@ -88,7 +89,7 @@
                 <div class="favorites__item">🎵 Nicky Nicole</div>
                 <div class="favorites__item">🎵 Bad Bunny</div>
               </div>
-              <button class="profile__info-btn" onclick="showAlert()">
+              <button class="profile__info-btn" onclick="openModal()">
                 Mostrar información extra
               </button>
             </div>
@@ -100,11 +101,38 @@
     <footer class="footer">
       <div class="footer__container">
         <p class="footer__text">
-          &copy; 2024 Grupo 3. Todos los derechos reservados.
+          &copy; 2025 Grupo 3. Todos los derechos reservados.
         </p>
       </div>
     </footer>
 
-    <script src="js/profile.js"></script>
+    <!-- Added modal for Estudiantes de La Plata information -->
+    <div class="modal" id="estudiantesModal">
+      <div class="modal__content">
+        <button class="modal__close" onclick="closeModal()">&times;</button>
+
+        <div class="modal__header">
+          <h2 class="modal__title">Hincha de Estudiantes de La Plata</h2>
+          <p class="modal__subtitle">Fundado en 1905</p>
+          <p class="modal__description">
+            El Club Estudiantes de La Plata nació bajo la cultura del trabajo,
+            del esfuerzo y del sacrificio individual en pos del bien colectivo.
+            Es la identidad que lo atraviesa, que lo forja y que le da la
+            voluntad necesaria para creer en utopías. Así lo marca su historia,
+            desde la fundación hasta la actualidad.
+          </p>
+        </div>
+
+        <div class="stars" id="starsGrid">
+          <!-- Las estrellas se generarán dinámicamente con JavaScript -->
+        </div>
+
+        <div class="star-detail" id="starDetail">
+          <!-- El detalle de cada estrella se mostrará aquí -->
+        </div>
+      </div>
+    </div>
+
+    <script src="js/nicolas.js"></script>
   </body>
 </html>
