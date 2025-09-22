@@ -298,7 +298,7 @@ article:hover .movie-title {
   padding: 0;
   display: flex; /* Usa flexbox para alinear elementos */
   flex-direction: column; /* Apila los ítems verticalmente */
-  align-items: center; /* Centra los ítems horizontalmente */
+  align-items: start; /* Centra los ítems horizontalmente */
   gap: 0.5rem; /* Espacio entre ítems de contacto */
 }
 
