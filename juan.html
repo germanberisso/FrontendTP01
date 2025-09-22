@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/juanStyle.css">
 </head>
+
 <body>
   <!-- Contenedor principal del cuerpo, usa Flexbox para apilar secciones verticalmente -->
   <header>
@@ -22,8 +24,13 @@
       <!-- Enlace a la página de bitácora -->
     </nav>
   </header>
-  
+
   <main>
+
+    <button class="profile__back" onclick="window.location.href='index.html'">
+      ⬅ Volver al equipo
+    </button>
+
     <!-- Sección principal que contiene la información personal y secciones de contenido -->
     <img src="./img/juan/juan.png" alt="Foto de perfil de Juan Dualibe" class="profile-img">
     <!-- Imagen de perfil del usuario con clase para estilizado -->
@@ -34,7 +41,9 @@
     <!-- Ubicación del usuario con clase para estilizado -->
     <p class="age">33 años</p>
     <!-- Edad del usuario con clase para estilizado -->
-    
+
+
+
     <section class="habilidades">
       <!-- Sección dedicada a las habilidades del usuario -->
       <h2>Habilidades</h2>
@@ -61,13 +70,28 @@
           <p>Java</p>
         </li>
         <li>
+          <img src="img/juan/Spring.png" alt="">
+          <br>
+          <p>Spring Framework</p>
+        </li>
+        <li>
+          <img src="img/juan/docker.png" alt="">
+          <br>
+          <p>Docker</p>
+        </li>
+        <li>
+          <img src="img/juan/kafka.png" alt="">
+          <br>
+          <p>Apache Kafka</p>
+        </li>
+        <li>
           <img src="img/juan/postgresql.png" alt="">
           <br>
           <p>PostgreSQL</p>
         </li>
       </ul>
     </section>
-    
+
     <section class="movies">
       <!-- Sección dedicada a las películas favoritas -->
       <h2>Películas favoritas</h2>
@@ -76,7 +100,9 @@
         <!-- Lista desordenada para mostrar las películas -->
         <li>
           <!-- Elemento de lista para cada película -->
-          <article class="movie" data-title="The Godfather (1972)" data-description="Un clásico del cine dirigido por Francis Ford Coppola, que narra la historia de la familia mafiosa Corleone." data-trailer="https://www.youtube.com/embed/UaVTIH8mujA?controls=1">
+          <article class="movie" data-title="The Godfather (1972)"
+            data-description="Un clásico del cine dirigido por Francis Ford Coppola, que narra la historia de la familia mafiosa Corleone."
+            data-trailer="https://www.youtube.com/embed/UaVTIH8mujA?controls=1">
             <!-- Artículo con clase "movie" y atributos de datos para título, descripción y trailer -->
             <img src="./img/juan/El-Padrino.png" alt="Portada de El Padrino" class="cover-img">
             <!-- Imagen de la portada de la película con clase para estilizado -->
@@ -85,20 +111,24 @@
           </article>
         </li>
         <li>
-          <article class="movie" data-title="Inception (2010)" data-description="Dirigida por Christopher Nolan, una película de ciencia ficción sobre el robo de secretos a través de los sueños." data-trailer="https://www.youtube.com/embed/YoHD9XEInc0?controls=1">
+          <article class="movie" data-title="Inception (2010)"
+            data-description="Dirigida por Christopher Nolan, una película de ciencia ficción sobre el robo de secretos a través de los sueños."
+            data-trailer="https://www.youtube.com/embed/YoHD9XEInc0?controls=1">
             <img src="./img/juan/Inception.png" alt="Portada de El Origen" class="cover-img">
             <p class="movie-title">El Origen</p>
           </article>
         </li>
         <li>
-          <article class="movie" data-title="Inland Empire (2006)" data-description="Una obra experimental de David Lynch que explora la realidad y la percepción." data-trailer="https://www.youtube.com/embed/kS2v-icgBj4?si=VOdYw5tBu3-xMQWQ?controls=1">
+          <article class="movie" data-title="Inland Empire (2006)"
+            data-description="Una obra experimental de David Lynch que explora la realidad y la percepción."
+            data-trailer="https://www.youtube.com/embed/kS2v-icgBj4?si=VOdYw5tBu3-xMQWQ?controls=1">
             <img src="./img/juan/Inland-Empire.jpeg" alt="Portada de Inland Empire" class="cover-img">
             <p class="movie-title">Inland Empire</p>
           </article>
         </li>
       </ul>
     </section>
-    
+
     <section>
       <!-- Sección dedicada a los discos favoritos -->
       <h2>Discos favoritos</h2>
@@ -106,7 +136,9 @@
       <ul>
         <!-- Lista desordenada para mostrar los discos -->
         <li>
-          <article class="album" data-title="The Bends (1995)" data-description="El segundo álbum de Radiohead, una obra maestra del rock alternativo de los 90." data-playlist="https://open.spotify.com/embed/album/35UJLpClj5EDrhpNIi4DFg">
+          <article class="album" data-title="The Bends (1995)"
+            data-description="El segundo álbum de Radiohead, una obra maestra del rock alternativo de los 90."
+            data-playlist="https://open.spotify.com/embed/album/35UJLpClj5EDrhpNIi4DFg">
             <!-- Artículo con clase "album" y atributos de datos para título, descripción y playlist -->
             <img src="./img/juan/radiohead-the-bends.jpg" alt="Portada de The Bends" class="cover-img">
             <!-- Imagen de la portada del disco con clase para estilizado -->
@@ -115,13 +147,17 @@
           </article>
         </li>
         <li>
-          <article class="album" data-title="Strung Out In Heaven (1998)" data-description="Un álbum psicodélico de The Brian Jonestown Massacre, lleno de energía retro." data-playlist="https://open.spotify.com/embed/album/7seUcTqq2JR2u4XycWiD7f">
+          <article class="album" data-title="Strung Out In Heaven (1998)"
+            data-description="Un álbum psicodélico de The Brian Jonestown Massacre, lleno de energía retro."
+            data-playlist="https://open.spotify.com/embed/album/7seUcTqq2JR2u4XycWiD7f">
             <img src="./img/juan/brian-jonestown-massacre.jpg" alt="Portada de Strung Out In Heaven" class="cover-img">
             <p class="movie-title">Brian Jonestown Massacre - <br> Strung Out In Heaven</p>
           </article>
         </li>
         <li>
-          <article class="album" data-title="Monster (1994)" data-description="Un álbum rock alternativo de R.E.M, cargado de guitarras crudas y vibrante energía." data-playlist="https://open.spotify.com/embed/album/17mS71JVgCCYLVdVcG0aUT">
+          <article class="album" data-title="Monster (1994)"
+            data-description="Un álbum rock alternativo de R.E.M, cargado de guitarras crudas y vibrante energía."
+            data-playlist="https://open.spotify.com/embed/album/17mS71JVgCCYLVdVcG0aUT">
             <img src="./img/juan/REM.webp" alt="Portada de Monster" class="cover-img">
             <p class="movie-title">R.E.M - Monster</p>
           </article>
@@ -139,20 +175,21 @@
         <!-- Elemento de lista con enlace telefónico -->
         <li>Email: <a href="mailto:juandualibe@gmail.com">juandualibe@gmail.com</a></li>
         <!-- Elemento de lista con enlace de email -->
-        <li>LinkedIn: <a href="https://www.linkedin.com/in/juan-dualibe-476a46335/" target="_blank">linkedin.com/in/juan-dualibe-476a46335/</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/juan-dualibe-476a46335/"
+            target="_blank">linkedin.com/in/juan-dualibe-476a46335/</a></li>
         <!-- Elemento de lista con enlace a LinkedIn, abre en nueva pestaña -->
         <li>GitHub: <a href="https://github.com/juandualibe" target="_blank">github.com/juandualibe</a></li>
         <!-- Elemento de lista con enlace a GitHub, abre en nueva pestaña -->
       </ul>
     </section>
   </main>
-  
+
   <footer>
     <!-- Pie de página con información de derechos -->
     <p>© 2025 Juan Dualibe - Todos los derechos reservados</p>
     <!-- Texto de copyright -->
   </footer>
-  
+
   <div class="modal" id="modal">
     <!-- Contenedor del modal para mostrar detalles de películas y discos -->
     <div class="modal-content">
@@ -169,9 +206,10 @@
       <!-- Contenedor para el iframe de trailer o playlist -->
     </div>
   </div>
-  
+
   <script src="js/juan.js">
-  /* Enlaza el script JavaScript que maneja la funcionalidad del modal y eventos */
+    /* Enlaza el script JavaScript que maneja la funcionalidad del modal y eventos */
   </script>
 </body>
+
 </html>
