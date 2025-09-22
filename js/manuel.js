@@ -15,13 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         objetivos: {
             img: '../img/manuel/img-objetivos.png', // Cambiar por la imagen que tengas
-            titulo: 'Objetivos',
-            descripcion: 'Mis principales objetivos son:\n\n• Terminar en tiempo y forma la tecnicatura\n\n• Cumplir los objetivos deportivos planteados con los equipos que dirijo\n\n• Adquirir la mayor cantidad de conocimientos y experiencias con la carrera'
+            titulo: 'Música Favorita',
+            descripcion: 'Mis artistas musicales favoritos son:\n\n• Sin Banderas\n\n• Serrat\n\n• Agapornis'
         },
         hobbies: {
             img: '../img/manuel/img-hobbies.png', // Cambiar por la imagen que tengas
-            titulo: 'Hobbies',
-            descripcion: '\n• Soy amante de los deportes y los videojuegos.\n\n• También disfruto mucho de series y animes.'
+            titulo: 'Peliculas Favoritas',
+            descripcion: '\n• Shrek\n\n• Todas las del universo Marvel\n\n• Toy Story'
         }
     };
 
