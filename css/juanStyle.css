@@ -76,7 +76,7 @@ header nav a:hover {
 main {
   background: rgba(255, 255, 255, 0.95); /* Fondo blanco semi-transparente */
   border-radius: 1.5rem; /* Bordes redondeados */
-  max-width: 40rem; /* Ancho máximo, igual que antes */
+  max-width: 50rem; /* Ancho máximo, igual que antes */
   width: 100%; /* Ocupa todo el ancho disponible hasta el máximo */
   padding: 6rem 2rem 2rem; /* Padding superior aumentado para el header fijo, laterales y inferior */
   position: relative; /* Para posicionar el pseudo-elemento de brillo */
