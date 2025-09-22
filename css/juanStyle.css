@@ -146,7 +146,7 @@ main h1 {
 }
 
 /* Estiliza los textos de ubicación y edad */
-.location, .age {
+.ocupation, .location, .age {
   font-size: 1rem;
   color: #374151; /* Gris oscuro */
   text-align: center;
